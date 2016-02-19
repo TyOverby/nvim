@@ -6,6 +6,7 @@ A slimmed down and neovimified version of my vim config.
 
 ```bash
 git clone https://github.com/TyOverby/nvim ~/.config/nvim
+nvim +PlugInstall +qall
 ```
 
 ## Screenshots

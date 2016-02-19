@@ -1,3 +1,84 @@
 call plug#begin()
 Plug 'tpope/vim-sensible'
+Plug 'morhetz/gruvbox'
+Plug 'scrooloose/nerdtree'
+Plug 'jistr/vim-nerdtree-tabs'
+Plug '907th/vim-auto-save'
+Plug 'thirtythreeforty/lessspace.vim'
+Plug 'tpope/vim-unimpaired'
+Plug 'tpope/vim-fugitive'
+Plug 'airblade/vim-gitgutter'
+Plug 'szw/vim-ctrlspace'
+Plug 'benekastah/neomake'
 call plug#end()
+
+
+" Misc
+set smartcase
+nnoremap Y y$
+set nospell
+set nohlsearch
+set nobackup
+set noswapfile
+set hidden
+set autoread
+
+
+" Tabs
+set softtabstop=4
+set tabstop=4
+set shiftwidth=4
+set expandtab
+filetype plugin indent on
+
+
+" Theme
+let g:gruvbox_bold = 0
+let g:gruvbox_italic = 0
+let g:gruvbox_underline = 0
+let g:gruvbox_undercurl = 0
+
+colo gruvbox
+set background=dark
+set fillchars=
+
+
+" Nerdtree
+map <silent> <Tab> :NERDTreeTabsToggle<CR>
+let NERDTreeMinimalUI=1
+let NERDTreeMapHelp='<f1>' " Release the usage of ? for backwards searching
+let g:NERDTreeDirArrows = 1
+let g:NERDTreeDirArrowExpandable = '▸'
+let g:NERDTreeDirArrowCollapsible = '▾'
+let g:NERDTreeCascadeOpenSingleChildDir = 1
+let g:NERDTreeIndicatorMapCustom = {
+    \ "Modified"  : "*",
+    \ "Staged"    : "+",
+    \ "Untracked" : "@",
+    \ "Renamed"   : "-",
+    \ "Unmerged"  : "=",
+    \ "Deleted"   : "x",
+    \ "Dirty"     : "-",
+    \ "Clean"     : "o",
+    \ "Unknown"   : "?"
+    \ }
+
+
+" Auto Save
+let g:auto_save = 1
+let g:auto_save_silent = 1
+let g:auto_save_in_insert_mode = 0
+
+
+" Git Gutter
+let g:gitgutter_realtime = 0
+let g:gitgutter_eager = 0
+let g:gitgutter_sign_column_always = 1
+
+
+" Ctrl Space
+let g:CtrlSpaceSearchTiming = 10
+
+
+" Neomake
+autocmd! BufWritePost * Neomake

@@ -1,4 +1,4 @@
-call plug#begin()
+call plug#begin('~/.config/nvim/plugged')
 Plug 'tpope/vim-sensible'
 Plug 'morhetz/gruvbox'
 Plug 'scrooloose/nerdtree'
@@ -31,6 +31,7 @@ set hidden
 set autoread
 set nu
 set rnu
+set nowrap
 
 
 " Tabs
@@ -60,6 +61,7 @@ set foldcolumn=1
 map <silent> <Tab> :NERDTreeTabsToggle<CR>
 let NERDTreeMinimalUI=1
 let NERDTreeMapHelp='<f1>'
+let g:NERDTreeWinPos = "right"
 let g:NERDTreeDirArrows = 1
 let g:NERDTreeDirArrowExpandable = '▸'
 let g:NERDTreeDirArrowCollapsible = '▾'

@@ -10,6 +10,12 @@ Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
 Plug 'szw/vim-ctrlspace'
 Plug 'benekastah/neomake'
+Plug 'plasticboy/vim-markdown',    { 'for': 'md' }
+Plug 'cespare/vim-toml',           { 'for': 'toml' }
+Plug 'wting/rust.vim',             { 'for': 'rust' }
+Plug 'othree/html5.vim',           { 'for': 'html' }
+Plug 'leafgarland/typescript-vim', { 'for': 'ts' }
+Plug 'PProvost/vim-ps1',           { 'for': 'ps1' }
 call plug#end()
 
 
@@ -81,4 +87,6 @@ let g:CtrlSpaceSearchTiming = 10
 
 
 " Neomake
-autocmd! BufWritePost * Neomake
+autocmd! BufWritePost * silent! Neomake
+let g:neomake_echo_current_error=0
+let g:neomake_verbose=0

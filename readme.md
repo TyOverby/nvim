@@ -5,8 +5,17 @@ A slimmed down and neovimified version of my vim config.
 ## Installation instructions
 
 ```bash
-git clone https://github.com/TyOverby/nvim ~/.config/
+git clone https://github.com/TyOverby/nvim ~/.config/nvim
+nvim +PlugInstall +qall
 ```
+
+## Shortcuts / Keybindings
+
+I have a few custom keybingings to make my workflow quicker.
+
+In Normal-Mode
+* `TAB` will open NERDTree.
+* `CTRL-SPACE` will open your list of open buffers.
 
 ## Screenshots
 

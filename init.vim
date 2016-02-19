@@ -48,11 +48,15 @@ colo gruvbox
 set background=dark
 set fillchars=
 
+hi! link CursorLineNr LineNr
+set numberwidth=4
+set foldcolumn=1
+
 
 " Nerdtree
 map <silent> <Tab> :NERDTreeTabsToggle<CR>
 let NERDTreeMinimalUI=1
-let NERDTreeMapHelp='<f1>' " Release the usage of ? for backwards searching
+let NERDTreeMapHelp='<f1>'
 let g:NERDTreeDirArrows = 1
 let g:NERDTreeDirArrowExpandable = '▸'
 let g:NERDTreeDirArrowCollapsible = '▾'

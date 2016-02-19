@@ -10,6 +10,7 @@ Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
 Plug 'szw/vim-ctrlspace'
 Plug 'benekastah/neomake'
+Plug 'myusuf3/numbers.vim'
 Plug 'plasticboy/vim-markdown',    { 'for': 'md' }
 Plug 'cespare/vim-toml',           { 'for': 'toml' }
 Plug 'wting/rust.vim',             { 'for': 'rust' }
@@ -28,6 +29,8 @@ set nobackup
 set noswapfile
 set hidden
 set autoread
+set nu
+set rnu
 
 
 " Tabs

@@ -5,7 +5,7 @@ A slimmed down and neovimified version of my vim config.
 ## Installation instructions
 
 ```bash
-git clone https://github.com/TyOverby/nvim ~/.config/
+git clone https://github.com/TyOverby/nvim ~/.config/nvim
 ```
 
 ## Screenshots

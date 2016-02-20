@@ -33,6 +33,8 @@ set autoread
 set nu
 set rnu
 set nowrap
+set ttimeout
+set ttimeoutlen=0
 
 
 " Tabs

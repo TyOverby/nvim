@@ -21,6 +21,7 @@ call plug#end()
 
 
 " Misc
+set ignorecase
 set smartcase
 nnoremap Y y$
 set nospell

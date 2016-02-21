@@ -44,6 +44,9 @@ set shiftwidth=4
 set expandtab
 filetype plugin indent on
 
+" Navigation mappings
+tnoremap <Esc> <C-\><C-n>
+
 
 " Theme
 let g:gruvbox_bold = 0

@@ -29,12 +29,12 @@ set nohlsearch
 set nobackup
 set noswapfile
 set hidden
-set autoread
 set nu
 set rnu
 set nowrap
 set ttimeout
 set ttimeoutlen=0
+set clipboard+=unnamedplus
 
 
 " Tabs

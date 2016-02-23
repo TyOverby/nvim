@@ -11,9 +11,10 @@ Plug 'airblade/vim-gitgutter'
 Plug 'szw/vim-ctrlspace'
 Plug 'benekastah/neomake'
 Plug 'myusuf3/numbers.vim'
+Plug 'Raimondi/delimitMate'
 Plug 'plasticboy/vim-markdown',    { 'for': 'md' }
 Plug 'cespare/vim-toml',           { 'for': 'toml' }
-Plug 'wting/rust.vim',             { 'for': 'rust' }
+Plug 'rust-lang/rust.vim',         { 'for': 'rust' }
 Plug 'othree/html5.vim',           { 'for': 'html' }
 Plug 'leafgarland/typescript-vim', { 'for': 'ts' }
 Plug 'PProvost/vim-ps1',           { 'for': 'ps1' }
@@ -35,6 +36,7 @@ set nowrap
 set ttimeout
 set ttimeoutlen=0
 set clipboard+=unnamedplus
+let loaded_matchparen=1
 
 
 " Tabs
@@ -102,6 +104,12 @@ let g:CtrlSpaceSearchTiming = 10
 
 
 " Neomake
-autocmd! BufWritePost * silent! Neomake
 let g:neomake_echo_current_error=0
 let g:neomake_verbose=0
+
+
+" Delimitmate
+let g:delimitMate_backspace = 2
+let g:delimitMate_expand_cr = 2
+let g:delimitMate_expand_space = 1
+au FileType rust let b:delimitMate_quotes = "\""

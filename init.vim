@@ -12,12 +12,12 @@ Plug 'szw/vim-ctrlspace'
 Plug 'benekastah/neomake'
 Plug 'myusuf3/numbers.vim'
 Plug 'Raimondi/delimitMate'
-Plug 'plasticboy/vim-markdown',    { 'for': 'md' }
-Plug 'cespare/vim-toml',           { 'for': 'toml' }
-Plug 'rust-lang/rust.vim',         { 'for': 'rust' }
-Plug 'othree/html5.vim',           { 'for': 'html' }
-Plug 'leafgarland/typescript-vim', { 'for': 'ts' }
-Plug 'PProvost/vim-ps1',           { 'for': 'ps1' }
+Plug 'plasticboy/vim-markdown'
+Plug 'cespare/vim-toml'
+Plug 'rust-lang/rust.vim'
+Plug 'othree/html5.vim'
+Plug 'leafgarland/typescript-vim'
+Plug 'PProvost/vim-ps1'
 call plug#end()
 
 

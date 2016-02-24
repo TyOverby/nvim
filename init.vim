@@ -37,6 +37,7 @@ set ttimeout
 set ttimeoutlen=0
 set clipboard+=unnamedplus
 set shortmess=I
+set nofoldenable
 let loaded_matchparen=1
 let mapleader=","
 

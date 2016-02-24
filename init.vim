@@ -25,7 +25,6 @@ call plug#end()
 " Misc Editor Preferences
 set ignorecase
 set smartcase
-nnoremap Y y$
 set nospell
 set nohlsearch
 set nobackup
@@ -37,6 +36,7 @@ set nowrap
 set ttimeout
 set ttimeoutlen=0
 set clipboard+=unnamedplus
+set shortmess=I
 let loaded_matchparen=1
 let mapleader=","
 
@@ -52,6 +52,7 @@ filetype plugin indent on
 " Shortcuts
 tnoremap <esc> <C-\><C-n>
 nnoremap <leader>t :term<up><cr>
+nnoremap Y y$
 
 
 " Style
@@ -64,7 +65,17 @@ colo gruvbox
 set background=dark
 set fillchars=
 
+hi! Normal ctermbg=none
 hi! link CursorLineNr LineNr
+hi! VertSplit ctermbg=None
+hi! FoldColumn ctermbg=None
+hi! SignColumn ctermbg=None
+
+hi! GruvboxGreenSign ctermfg=142 ctermbg=None guifg=#b8bb26 guibg=#3c3836
+hi! GruvboxAquaSign ctermfg=108 ctermbg=None guifg=#8ec07c guibg=#3c3836
+hi! GruvboxBlueSign ctermfg=109 ctermbg=None guifg=#83a598 guibg=#3c3836
+hi! GruvboxRedSign ctermfg=167 ctermbg=None guifg=#fb4934 guibg=#3c3836
+
 set numberwidth=4
 set foldcolumn=1
 

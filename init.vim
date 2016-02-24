@@ -1,3 +1,4 @@
+" Plugins
 call plug#begin('~/.config/nvim/plugged')
 Plug 'tpope/vim-sensible'
 Plug 'morhetz/gruvbox'
@@ -21,7 +22,7 @@ Plug 'PProvost/vim-ps1'
 call plug#end()
 
 
-" Misc
+" Misc Editor Preferences
 set ignorecase
 set smartcase
 nnoremap Y y$
@@ -37,6 +38,7 @@ set ttimeout
 set ttimeoutlen=0
 set clipboard+=unnamedplus
 let loaded_matchparen=1
+let mapleader=","
 
 
 " Tabs
@@ -46,11 +48,12 @@ set shiftwidth=4
 set expandtab
 filetype plugin indent on
 
-" Navigation mappings
+
+" Navigation Mappings
 tnoremap <Esc> <C-\><C-n>
 
 
-" Theme
+" Style
 let g:gruvbox_bold = 0
 let g:gruvbox_italic = 0
 let g:gruvbox_underline = 0
@@ -65,7 +68,7 @@ set numberwidth=4
 set foldcolumn=1
 
 
-" Nerdtree
+" Nerd Tree
 map <silent> <Tab> :NERDTreeTabsToggle<CR>
 let NERDTreeMinimalUI=1
 let NERDTreeMapHelp='<f1>'

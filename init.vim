@@ -49,8 +49,9 @@ set expandtab
 filetype plugin indent on
 
 
-" Navigation Mappings
-tnoremap <Esc> <C-\><C-n>
+" Shortcuts
+tnoremap <esc> <C-\><C-n>
+nnoremap <leader>t :term<up><cr>
 
 
 " Style

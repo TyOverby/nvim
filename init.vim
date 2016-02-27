@@ -105,8 +105,9 @@ let g:lightline = {
 
 " Nerd Tree
 map <silent> <Tab> :NERDTreeTabsToggle<CR>
-let NERDTreeMinimalUI=1
-let NERDTreeMapHelp='<f1>'
+let g:NERDTreeMinimalUI = 1
+let g:NERDTreeMapHelp = '<f1>'
+let g:nerdtree_tabs_autoclose = 0
 let g:NERDTreeWinPos = "right"
 let g:NERDTreeDirArrows = 1
 let g:NERDTreeDirArrowExpandable = '▸'

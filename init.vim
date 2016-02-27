@@ -18,6 +18,7 @@ Plug 'cespare/vim-toml'
 Plug 'rust-lang/rust.vim'
 Plug 'othree/html5.vim'
 Plug 'leafgarland/typescript-vim'
+Plug 'itchyny/lightline.vim'
 Plug 'PProvost/vim-ps1'
 call plug#end()
 
@@ -79,6 +80,27 @@ hi! GruvboxRedSign ctermfg=167 ctermbg=None guifg=#fb4934 guibg=#3c3836
 
 set numberwidth=4
 set foldcolumn=1
+
+let g:lightline = {
+    \ 'colorscheme': 'wombat',
+    \ 'active': {
+    \   'left': [ [],
+    \             [ 'mode', 'paste' ],
+    \             [ 'fugitive', 'readonly', 'filename' ] ]
+    \ },
+    \ 'component': {
+    \   'readonly': '%{&filetype=="help"?"":&readonly?"⭤":""}',
+    \   'modified': '%{&filetype=="help"?"":&modified?"+":&modifiable?"":"-"}',
+    \   'fugitive': '%{exists("*fugitive#head")?fugitive#head():""}'
+    \ },
+    \ 'component_visible_condition': {
+    \   'readonly': '(&filetype!="help"&& &readonly)',
+    \   'modified': '(&filetype!="help"&&(&modified||!&modifiable))',
+    \   'fugitive': '(exists("*fugitive#head") && ""!=fugitive#head())'
+    \ },
+    \ 'separator': { 'left': '>', 'right': '<' },
+    \ 'subseparator': { 'left': '>', 'right': '<' }
+\}
 
 
 " Nerd Tree

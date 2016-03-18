@@ -11,7 +11,6 @@ Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
 Plug 'szw/vim-ctrlspace'
 Plug 'benekastah/neomake'
-Plug 'myusuf3/numbers.vim'
 Plug 'Raimondi/delimitMate'
 Plug 'plasticboy/vim-markdown'
 Plug 'cespare/vim-toml'
@@ -31,8 +30,7 @@ set nohlsearch
 set nobackup
 set noswapfile
 set hidden
-set nu
-set rnu
+set relativenumber number
 set nowrap
 set ttimeout
 set ttimeoutlen=0
@@ -156,8 +154,3 @@ let g:delimitMate_backspace = 2
 let g:delimitMate_expand_cr = 2
 let g:delimitMate_expand_space = 1
 au FileType rust let b:delimitMate_quotes = "\""
-
-
-" Numbers
-let g:numbers_exclude = ['term', 'unite', 'tagbar', 'startify', 'gundo', 'vimshell', 'w3m']
-autocmd BufWinEnter,WinEnter term://* :set ft=term

@@ -65,6 +65,8 @@ let g:gruvbox_undercurl = 0
 
 colo gruvbox
 set background=dark
+set bg=dark
+hi EndOfBuffer ctermfg=bg
 set fillchars=
 
 hi! Normal ctermbg=none
@@ -77,6 +79,7 @@ hi! GruvboxGreenSign ctermfg=142 ctermbg=None guifg=#b8bb26 guibg=#3c3836
 hi! GruvboxAquaSign ctermfg=108 ctermbg=None guifg=#8ec07c guibg=#3c3836
 hi! GruvboxBlueSign ctermfg=109 ctermbg=None guifg=#83a598 guibg=#3c3836
 hi! GruvboxRedSign ctermfg=167 ctermbg=None guifg=#fb4934 guibg=#3c3836
+
 
 set numberwidth=4
 set foldcolumn=1
@@ -107,7 +110,7 @@ let g:lightline = {
 map <silent> <Tab> :NERDTreeTabsToggle<CR>
 let g:NERDTreeMinimalUI = 1
 let g:NERDTreeMapHelp = '<f1>'
-let g:nerdtree_tabs_autoclose = 0
+let g:NERDTreeQuitOnOpen = 1
 let g:NERDTreeWinPos = "right"
 let g:NERDTreeDirArrows = 1
 let g:NERDTreeDirArrowExpandable = '▸'
@@ -143,8 +146,9 @@ let g:CtrlSpaceSearchTiming = 10
 
 
 " Neomake
-let g:neomake_echo_current_error=0
+let g:neomake_echo_current_error=1
 let g:neomake_verbose=0
+autocmd! BufWritePost *.rs Neomake
 
 
 " Delimitmate
@@ -152,3 +156,8 @@ let g:delimitMate_backspace = 2
 let g:delimitMate_expand_cr = 2
 let g:delimitMate_expand_space = 1
 au FileType rust let b:delimitMate_quotes = "\""
+
+
+" Numbers
+let g:numbers_exclude = ['term', 'unite', 'tagbar', 'startify', 'gundo', 'vimshell', 'w3m']
+autocmd BufWinEnter,WinEnter term://* :set ft=term

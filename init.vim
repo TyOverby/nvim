@@ -19,6 +19,7 @@ Plug 'othree/html5.vim'
 Plug 'leafgarland/typescript-vim'
 Plug 'itchyny/lightline.vim'
 Plug 'PProvost/vim-ps1'
+Plug 'valloric/YouCompleteMe'
 call plug#end()
 
 
@@ -39,7 +40,6 @@ set shortmess=I
 set nofoldenable
 let loaded_matchparen=1
 let mapleader=","
-
 
 " Tabs
 set softtabstop=4
@@ -146,7 +146,7 @@ let g:CtrlSpaceSearchTiming = 10
 " Neomake
 let g:neomake_echo_current_error=1
 let g:neomake_verbose=0
-autocmd! BufWritePost *.rs Neomake
+autocmd! BufWritePost *.rs NeomakeProject cargo
 
 
 " Delimitmate
@@ -154,3 +154,8 @@ let g:delimitMate_backspace = 2
 let g:delimitMate_expand_cr = 2
 let g:delimitMate_expand_space = 1
 au FileType rust let b:delimitMate_quotes = "\""
+
+
+" You Complete Me
+let g:ycm_rust_src_path = '/Users/tyoverby/workspace/rust/rust/src'
+nnoremap <Leader>g :YcmCompleter GoTo<CR>

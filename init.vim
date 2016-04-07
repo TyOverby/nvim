@@ -68,21 +68,21 @@ set bg=dark
 hi EndOfBuffer ctermfg=bg
 set fillchars=
 
-hi! Normal ctermbg=none
 hi! link CursorLineNr LineNr
-hi! VertSplit ctermbg=None
-hi! FoldColumn ctermbg=None
-hi! SignColumn ctermbg=None
-
-hi! GruvboxGreenSign ctermfg=142 ctermbg=None guifg=#b8bb26 guibg=#3c3836
-hi! GruvboxAquaSign ctermfg=108 ctermbg=None guifg=#8ec07c guibg=#3c3836
-hi! GruvboxBlueSign ctermfg=109 ctermbg=None guifg=#83a598 guibg=#3c3836
-hi! GruvboxRedSign ctermfg=167 ctermbg=None guifg=#fb4934 guibg=#3c3836
-
+hi! VertSplit ctermbg=bg
+hi! FoldColumn ctermbg=bg
+hi! SignColumn ctermbg=bg
+hi! GruvboxRedSign ctermfg=167 ctermbg=bg guifg=#fb4934 guibg=bg
+hi! GruvboxGreenSign ctermfg=142 ctermbg=bg guifg=#b8bb26 guibg=bg
+hi! GruvboxAquaSign ctermfg=108 ctermbg=bg guifg=#8ec07c guibg=bg
+hi! GruvboxBlueSign ctermfg=109 ctermbg=bg guifg=#83a598 guibg=bg
+hi! GruvboxRedSign ctermfg=167 ctermbg=bg guifg=#fb4934 guibg=bg
 
 set numberwidth=4
-set foldcolumn=1
+set foldcolumn=2
 
+
+" Light Line
 let g:lightline = {
     \ 'colorscheme': 'wombat',
     \ 'active': {

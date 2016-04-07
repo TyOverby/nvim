@@ -166,7 +166,7 @@ let g:deoplete#enable_at_startup = 1
 let g:deoplete#auto_complete_start_length = 1
 let g:deoplete#max_list = 50
 inoremap <silent><expr> <Tab> pumvisible() ? deoplete#mappings#close_popup() : "\<Tab>"
-inoremap <silent><expr><CR> pumvisible() ? deoplete#mappings#close_popup() : "\<CR>"
+inoremap <silent><expr> <CR>  pumvisible() ? deoplete#mappings#close_popup() : "\<CR>"
 inoremap <silent><expr> <Esc> pumvisible() ? "\<C-e>" : "\<Esc>"
 inoremap <silent><expr> <Nul> pumvisible() ? "" : deoplete#mappings#manual_complete()
 set completeopt=menuone,longest,preview,noinsert

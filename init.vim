@@ -19,7 +19,8 @@ Plug 'othree/html5.vim'
 Plug 'leafgarland/typescript-vim'
 Plug 'itchyny/lightline.vim'
 Plug 'PProvost/vim-ps1'
-Plug 'valloric/YouCompleteMe'
+Plug 'Shougo/deoplete.nvim'
+Plug 'racer-rust/vim-racer'
 call plug#end()
 
 
@@ -156,6 +157,27 @@ let g:delimitMate_expand_space = 1
 au FileType rust let b:delimitMate_quotes = "\""
 
 
-" You Complete Me
-let g:ycm_rust_src_path = '/Users/tyoverby/workspace/rust/rust/src'
-nnoremap <Leader>g :YcmCompleter GoTo<CR>
+" Racer
+let $RUST_SRC_PATH="/Users/tyoverby/workspace/rust/rust/src"
+
+
+" Deoplete
+let g:deoplete#enable_at_startup = 1
+let g:deoplete#auto_complete_start_length = 1
+let g:deoplete#max_list = 50
+inoremap <silent><expr> <Tab> pumvisible() ? deoplete#mappings#close_popup() : "\<Tab>"
+inoremap <silent><expr><CR> pumvisible() ? deoplete#mappings#close_popup() : "\<CR>"
+inoremap <silent><expr> <Esc> pumvisible() ? "\<C-e>" : "\<Esc>"
+inoremap <silent><expr> <Nul> pumvisible() ? "" : deoplete#mappings#manual_complete()
+set completeopt=menuone,longest,preview,noinsert
+
+
+" Smart Indent
+function! IndentWithI()
+    if len(getline('.')) == 0
+        return "\"_cc"
+    else
+        return "i"
+    endif
+endfunction
+nnoremap <expr> i IndentWithI()

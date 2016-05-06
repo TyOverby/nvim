@@ -41,7 +41,6 @@ set shortmess=I
 set nofoldenable
 let loaded_matchparen=1
 let mapleader=","
-set iskeyword-=_
 
 " Tabs
 set softtabstop=4

@@ -10,6 +10,7 @@ Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
 Plug 'szw/vim-ctrlspace'
+Plug 'ctrlpvim/ctrlp.vim'
 Plug 'benekastah/neomake'
 Plug 'Raimondi/delimitMate'
 Plug 'plasticboy/vim-markdown'
@@ -99,8 +100,8 @@ let g:lightline = {
     \   'modified': '(&filetype!="help"&&(&modified||!&modifiable))',
     \   'fugitive': '(exists("*fugitive#head") && ""!=fugitive#head())'
     \ },
-    \ 'separator': { 'left': '>', 'right': '<' },
-    \ 'subseparator': { 'left': '>', 'right': '<' }
+    \ 'separator': { 'left': '', 'right': '' },
+    \ 'subseparator': { 'left': '', 'right': '' }
 \}
 
 

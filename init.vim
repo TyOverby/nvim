@@ -11,7 +11,7 @@ Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
 Plug 'szw/vim-ctrlspace'
 Plug 'ctrlpvim/ctrlp.vim'
-Plug 'benekastah/neomake'
+Plug 'neomake/neomake'
 Plug 'Raimondi/delimitMate'
 Plug 'plasticboy/vim-markdown'
 Plug 'cespare/vim-toml'
@@ -147,7 +147,9 @@ let g:CtrlSpaceSearchTiming = 10
 " Neomake
 let g:neomake_echo_current_error=1
 let g:neomake_verbose=0
-autocmd! BufWritePost *.rs NeomakeProject cargo
+autocmd BufWritePost *.rs NeomakeProject cargo
+autocmd BufWritePost *.ts NeomakeProject typescript_project
+autocmd BufWritePost *.ts Neomake tslint
 
 
 " Delimitmate
@@ -170,6 +172,8 @@ function! IndentWithI()
     endif
 endfunction
 nnoremap <expr> i IndentWithI()
+
+
 " You Complete Me
 let g:ycm_rust_src_path = '/Users/tyoverby/workspace/rust/rust/src'
 nnoremap <Leader>g :YcmCompleter GoTo<CR>

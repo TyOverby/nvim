@@ -20,7 +20,9 @@ Plug 'othree/html5.vim'
 Plug 'leafgarland/typescript-vim'
 Plug 'itchyny/lightline.vim'
 Plug 'PProvost/vim-ps1'
-Plug 'valloric/YouCompleteMe'
+Plug 'stefandtw/quickfix-reflector.vim'
+Plug 'racer-rust/vim-racer'
+Plug 'Shougo/deoplete.nvim'
 call plug#end()
 
 
@@ -41,6 +43,7 @@ set shortmess=I
 set nofoldenable
 let loaded_matchparen=1
 let mapleader=","
+let g:terminal_scrollback_buffer_size=100000
 
 " Tabs
 set softtabstop=4
@@ -147,9 +150,30 @@ let g:CtrlSpaceSearchTiming = 10
 " Neomake
 let g:neomake_echo_current_error=1
 let g:neomake_verbose=0
-autocmd BufWritePost *.rs NeomakeProject cargo
-autocmd BufWritePost *.ts NeomakeProject typescript_project
+" autocmd BufWritePost *.rs NeomakeProject cargo
+" autocmd BufWritePost *.ts NeomakeProject typescript_project
+autocmd BufWritePost *.ts Neomake 
 autocmd BufWritePost *.ts Neomake tslint
+nnoremap <Leader>c :NeomakeProject cargo<CR>
+
+" Deoplete
+let g:deoplete#enable_at_startup = 1
+let g:deoplete#enable_refresh_always = 1
+let g:deoplete#auto_complete_start_length = 2
+let g:deoplete#max_list = 50
+" inoremap <silent><expr> <Tab> pumvisible() ? deoplete#mappings#close_popup() : "<C-x><C-o>"
+" inoremap <silent><expr> <CR>  pumvisible() ? deoplete#mappings#close_popup() : "\<CR>"
+" inoremap <silent><expr> <Nul> pumvisible() ? "" : deoplete#mappings#manual_complete()
+inoremap <C-Space> <C-x><C-o>
+inoremap <C-@> <C-x><C-o>
+inoremap <Nul> <C-x><C-o>
+set completeopt=menu,longest,preview,noinsert
+
+
+" Racer
+let $RUST_SRC_PATH="/Users/tyoverby/workspace/rust/rust/src"
+let g:racer_cmd="/Users/tyoverby/.cargo/bin/racer"
+let g:racer_experimental_completer = 1
 
 
 " Delimitmate
@@ -157,10 +181,6 @@ let g:delimitMate_backspace = 2
 let g:delimitMate_expand_cr = 2
 let g:delimitMate_expand_space = 1
 au FileType rust let b:delimitMate_quotes = "\""
-
-
-" Racer
-let $RUST_SRC_PATH="/Users/tyoverby/workspace/rust/rust/src"
 
 
 " Smart Indent
@@ -173,7 +193,3 @@ function! IndentWithI()
 endfunction
 nnoremap <expr> i IndentWithI()
 
-
-" You Complete Me
-let g:ycm_rust_src_path = '/Users/tyoverby/workspace/rust/rust/src'
-nnoremap <Leader>g :YcmCompleter GoTo<CR>

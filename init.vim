@@ -21,6 +21,7 @@ Plug 'leafgarland/typescript-vim'
 Plug 'itchyny/lightline.vim'
 Plug 'PProvost/vim-ps1'
 Plug 'valloric/YouCompleteMe'
+Plug 'machakann/vim-highlightedyank'
 call plug#end()
 
 

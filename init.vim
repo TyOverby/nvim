@@ -23,6 +23,7 @@ Plug 'PProvost/vim-ps1'
 Plug 'stefandtw/quickfix-reflector.vim'
 Plug 'racer-rust/vim-racer'
 Plug 'Shougo/deoplete.nvim'
+Plug 'machakann/vim-highlightedyank'
 call plug#end()
 
 

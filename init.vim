@@ -23,7 +23,7 @@ Plug 'PProvost/vim-ps1'
 Plug 'stefandtw/quickfix-reflector.vim'
 Plug 'racer-rust/vim-racer'
 Plug 'Shougo/deoplete.nvim'
-Plug 'machakann/vim-highlightedyank'
+Plug 'TyOverby/vim-entangle'
 call plug#end()
 
 
@@ -194,3 +194,11 @@ function! IndentWithI()
 endfunction
 nnoremap <expr> i IndentWithI()
 
+" Entangle 
+nnoremap <Leader><Space> :EntangleSend<CR>
+vnoremap <Leader><Space> :EntangleSend<CR>
+
+" Terminal
+autocmd BufWinEnter,WinEnter term://* startinsert
+autocmd BufLeave term://* stopinsert
+tnoremap <C-w> <C-\><C-n><C-w>

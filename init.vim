@@ -146,6 +146,7 @@ let g:gitgutter_sign_column_always = 1
 
 " Ctrl Space
 let g:CtrlSpaceSearchTiming = 10
+nnoremap <C-Space> :CtrlSpace<CR>
 
 
 " Neomake
@@ -199,6 +200,9 @@ nnoremap <Leader><Space> :EntangleSend<CR>
 vnoremap <Leader><Space> :EntangleSend<CR>
 
 " Terminal
-autocmd BufWinEnter,WinEnter term://* startinsert
-autocmd BufLeave term://* stopinsert
 tnoremap <C-w> <C-\><C-n><C-w>
+augroup terminal_insert
+    autocmd!
+    autocmd BufEnter term://* startinsert
+    autocmd BufLeave term://* stopinsert
+augroup END

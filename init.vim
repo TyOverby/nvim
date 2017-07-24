@@ -72,9 +72,9 @@ set bg=dark
 hi EndOfBuffer ctermfg=bg
 set fillchars=
 
-hi! Normal ctermbg=none
+" hi! Normal ctermbg=none
 hi! link CursorLineNr LineNr
-hi! VertSplit ctermbg=None
+hi! VertSplit ctermbg=8
 hi! FoldColumn ctermbg=None
 hi! SignColumn ctermbg=None
 
@@ -139,8 +139,8 @@ let g:auto_save_in_insert_mode = 0
 
 
 " Git Gutter
-let g:gitgutter_realtime = 0
-let g:gitgutter_eager = 0
+let g:gitgutter_realtime = 1
+let g:gitgutter_eager = 1
 let g:gitgutter_sign_column_always = 1
 
 

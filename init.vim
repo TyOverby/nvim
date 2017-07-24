@@ -18,7 +18,6 @@ Plug 'cespare/vim-toml'
 Plug 'rust-lang/rust.vim'
 Plug 'othree/html5.vim'
 Plug 'leafgarland/typescript-vim'
-Plug 'itchyny/lightline.vim'
 Plug 'PProvost/vim-ps1'
 Plug 'stefandtw/quickfix-reflector.vim'
 Plug 'racer-rust/vim-racer'
@@ -74,7 +73,7 @@ set fillchars=
 
 " hi! Normal ctermbg=none
 hi! link CursorLineNr LineNr
-hi! VertSplit ctermbg=8
+hi! VertSplit ctermbg=None
 hi! FoldColumn ctermbg=None
 hi! SignColumn ctermbg=None
 
@@ -86,27 +85,10 @@ hi! GruvboxRedSign ctermfg=167 ctermbg=None guifg=#fb4934 guibg=#3c3836
 
 set numberwidth=4
 set foldcolumn=1
-
-let g:lightline = {
-    \ 'colorscheme': 'wombat',
-    \ 'active': {
-    \   'left': [ [],
-    \             [ 'mode', 'paste' ],
-    \             [ 'fugitive', 'readonly', 'filename' ] ]
-    \ },
-    \ 'component': {
-    \   'readonly': '%{&filetype=="help"?"":&readonly?"⭤":""}',
-    \   'modified': '%{&filetype=="help"?"":&modified?"+":&modifiable?"":"-"}',
-    \   'fugitive': '%{exists("*fugitive#head")?fugitive#head():""}'
-    \ },
-    \ 'component_visible_condition': {
-    \   'readonly': '(&filetype!="help"&& &readonly)',
-    \   'modified': '(&filetype!="help"&&(&modified||!&modifiable))',
-    \   'fugitive': '(exists("*fugitive#head") && ""!=fugitive#head())'
-    \ },
-    \ 'separator': { 'left': '', 'right': '' },
-    \ 'subseparator': { 'left': '', 'right': '' }
-\}
+" Get rid of status line
+set noru
+set laststatus=0
+set noshowmode
 
 
 " Nerd Tree

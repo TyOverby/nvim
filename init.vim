@@ -45,6 +45,7 @@ let loaded_matchparen=1
 let mapleader=","
 let g:terminal_scrollback_buffer_size=100000
 
+
 " Tabs
 set softtabstop=4
 set tabstop=4
@@ -71,7 +72,6 @@ set bg=dark
 hi EndOfBuffer ctermfg=bg
 set fillchars=
 
-" hi! Normal ctermbg=none
 hi! link CursorLineNr LineNr
 hi! VertSplit ctermbg=None
 hi! FoldColumn ctermbg=None
@@ -82,9 +82,9 @@ hi! GruvboxAquaSign ctermfg=108 ctermbg=None guifg=#8ec07c guibg=#3c3836
 hi! GruvboxBlueSign ctermfg=109 ctermbg=None guifg=#83a598 guibg=#3c3836
 hi! GruvboxRedSign ctermfg=167 ctermbg=None guifg=#fb4934 guibg=#3c3836
 
-
 set numberwidth=4
 set foldcolumn=1
+
 " Get rid of status line
 autocmd BufEnter * set noru
 autocmd BufEnter * set laststatus=0
@@ -177,9 +177,11 @@ function! IndentWithI()
 endfunction
 nnoremap <expr> i IndentWithI()
 
+
 " Entangle 
 nnoremap <Leader><Space> :EntangleSend<CR>
 vnoremap <Leader><Space> :EntangleSend<CR>
+
 
 " Terminal
 tnoremap <C-w> <C-\><C-n><C-w>

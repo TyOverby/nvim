@@ -7,11 +7,11 @@ Plug 'jistr/vim-nerdtree-tabs'
 Plug '907th/vim-auto-save'
 Plug 'thirtythreeforty/lessspace.vim'
 Plug 'tpope/vim-unimpaired'
+Plug 'w0rp/ale'
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
 Plug 'szw/vim-ctrlspace'
 Plug 'ctrlpvim/ctrlp.vim'
-Plug 'neomake/neomake'
 Plug 'Raimondi/delimitMate'
 Plug 'plasticboy/vim-markdown'
 Plug 'cespare/vim-toml'
@@ -82,6 +82,11 @@ hi! GruvboxAquaSign ctermfg=108 ctermbg=None guifg=#8ec07c guibg=#3c3836
 hi! GruvboxBlueSign ctermfg=109 ctermbg=None guifg=#83a598 guibg=#3c3836
 hi! GruvboxRedSign ctermfg=167 ctermbg=None guifg=#fb4934 guibg=#3c3836
 
+hi! link ALEErrorSign GruvboxRedSign
+hi! link ALEWarningSign GruvboxRedSign
+hi! ALEErrorLine ctermbg=167 ctermfg=black
+hi! ALEWarningLine ctermbg=brown ctermfg=black
+
 set numberwidth=4
 set foldcolumn=1
 
@@ -131,14 +136,14 @@ let g:CtrlSpaceSearchTiming = 10
 nnoremap <C-Space> :CtrlSpace<CR>
 
 
-" Neomake
-let g:neomake_echo_current_error=1
-let g:neomake_verbose=0
-" autocmd BufWritePost *.rs NeomakeProject cargo
-" autocmd BufWritePost *.ts NeomakeProject typescript_project
-autocmd BufWritePost *.ts Neomake 
-autocmd BufWritePost *.ts Neomake tslint
-nnoremap <Leader>c :NeomakeProject cargo<CR>
+" Ale
+let g:ale_rust_cargo_use_check=1
+let g:ale_sign_column_always = 1
+let g:ale_set_loclist = 0
+let g:ale_set_quickfix = 1
+let g:ale_open_list = 1
+let g:ale_sign_error = '->'
+let g:ale_sign_warning = '->'
 
 " Deoplete
 let g:deoplete#enable_at_startup = 1

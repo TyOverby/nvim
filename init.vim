@@ -87,6 +87,9 @@ hi! link ALEWarningSign GruvboxRedSign
 hi! ALEErrorLine ctermbg=167 ctermfg=black
 hi! ALEWarningLine ctermbg=brown ctermfg=black
 
+" No highlighting on quickfix lines
+hi! link QuickFixLine Normal
+
 set numberwidth=4
 set foldcolumn=1
 
@@ -195,3 +198,10 @@ augroup terminal_insert
     autocmd BufEnter term://* startinsert
     autocmd BufLeave term://* stopinsert
 augroup END
+
+
+" QuickFix Autosize
+au FileType qf call AdjustWindowHeight(1, 10)
+function! AdjustWindowHeight(minheight, maxheight)
+  exe max([min([line("$"), a:maxheight]), a:minheight]) . "wincmd _"
+endfunction

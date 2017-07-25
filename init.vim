@@ -86,9 +86,9 @@ hi! GruvboxRedSign ctermfg=167 ctermbg=None guifg=#fb4934 guibg=#3c3836
 set numberwidth=4
 set foldcolumn=1
 " Get rid of status line
-set noru
-set laststatus=0
-set noshowmode
+autocmd BufEnter * set noru
+autocmd BufEnter * set laststatus=0
+autocmd BufEnter * set noshowmode
 
 
 " Nerd Tree

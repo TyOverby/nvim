@@ -1,28 +1,34 @@
 " Plugins
 call plug#begin('~/.config/nvim/plugged')
-Plug 'tpope/vim-sensible'
+
+" Autocomplete
+Plug 'Shougo/deoplete.nvim'
+Plug 'autozimu/LanguageClient-neovim', { 'do': ':UpdateRemotePlugins' }
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+Plug 'Shougo/echodoc.vim'
+
+" Theme
 Plug 'morhetz/gruvbox'
+
+" Utility
+Plug 'tpope/vim-sensible'
 Plug 'scrooloose/nerdtree'
 Plug 'jistr/vim-nerdtree-tabs'
 Plug '907th/vim-auto-save'
 Plug 'thirtythreeforty/lessspace.vim'
 Plug 'tpope/vim-unimpaired'
-Plug 'w0rp/ale'
-Plug 'tpope/vim-fugitive'
-Plug 'airblade/vim-gitgutter'
+Plug 'stefandtw/quickfix-reflector.vim'
 Plug 'szw/vim-ctrlspace'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'Raimondi/delimitMate'
+Plug 'w0rp/ale'
+
+" Language
 Plug 'plasticboy/vim-markdown'
 Plug 'cespare/vim-toml'
 Plug 'rust-lang/rust.vim'
 Plug 'othree/html5.vim'
 Plug 'leafgarland/typescript-vim'
-Plug 'PProvost/vim-ps1'
-Plug 'stefandtw/quickfix-reflector.vim'
-Plug 'racer-rust/vim-racer'
-Plug 'Shougo/deoplete.nvim'
-Plug 'TyOverby/vim-entangle'
 call plug#end()
 
 
@@ -44,6 +50,14 @@ set nofoldenable
 let loaded_matchparen=1
 let mapleader=","
 let g:terminal_scrollback_buffer_size=100000
+
+
+" Language Server
+let g:LanguageClient_serverCommands = { 'rust': ['rustup', 'run', 'nightly', 'rls'] }
+let g:LanguageClient_autoStart = 1
+nnoremap <silent> K :call LanguageClient_textDocument_hover()<CR>
+nnoremap <silent> gd :call LanguageClient_textDocument_definition()<CR>
+nnoremap <silent> <F2> :call LanguageClient_textDocument_rename()<CR>
 
 
 " Tabs
@@ -129,10 +143,9 @@ let g:auto_save_in_insert_mode = 0
 
 
 " Git Gutter
-let g:gitgutter_realtime = 1
-let g:gitgutter_eager = 1
-let g:gitgutter_sign_column_always = 1
-
+let g:gitgutter_realtime = 0
+let g:gitgutter_eager = 0
+set signcolumn=yes
 
 " Ctrl Space
 let g:CtrlSpaceSearchTiming = 10
@@ -140,11 +153,14 @@ nnoremap <C-Space> :CtrlSpace<CR>
 
 
 " Ale
-let g:ale_rust_cargo_use_check=1
+let g:ale_enabled = 0
+let g:ale_rust_cargo_use_check = 1
 let g:ale_sign_column_always = 1
 let g:ale_set_loclist = 0
 let g:ale_set_quickfix = 1
-let g:ale_open_list = 1
+let g:ale_lint_on_save = 0
+let g:ale_lint_on_enter = 0
+let g:ale_open_list = 0
 let g:ale_sign_error = '->'
 let g:ale_sign_warning = '->'
 
@@ -201,7 +217,7 @@ augroup END
 
 
 " QuickFix Autosize
-au FileType qf call AdjustWindowHeight(1, 10)
-function! AdjustWindowHeight(minheight, maxheight)
-  exe max([min([line("$"), a:maxheight]), a:minheight]) . "wincmd _"
-endfunction
+"au FileType qf call AdjustWindowHeight(1, 10)
+"function! AdjustWindowHeight(minheight, maxheight)
+"  exe max([min([line("$"), a:maxheight]), a:minheight]) . "wincmd _"
+"endfunction

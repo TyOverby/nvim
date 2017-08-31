@@ -1,28 +1,29 @@
 " Plugins
 call plug#begin('~/.config/nvim/plugged')
-Plug 'tpope/vim-sensible'
-Plug 'morhetz/gruvbox'
-Plug 'scrooloose/nerdtree'
-Plug 'jistr/vim-nerdtree-tabs'
 Plug '907th/vim-auto-save'
-Plug 'thirtythreeforty/lessspace.vim'
-Plug 'tpope/vim-unimpaired'
-Plug 'w0rp/ale'
-Plug 'tpope/vim-fugitive'
-Plug 'airblade/vim-gitgutter'
-Plug 'szw/vim-ctrlspace'
-Plug 'ctrlpvim/ctrlp.vim'
-Plug 'Raimondi/delimitMate'
-Plug 'plasticboy/vim-markdown'
-Plug 'cespare/vim-toml'
-Plug 'rust-lang/rust.vim'
-Plug 'othree/html5.vim'
-Plug 'leafgarland/typescript-vim'
 Plug 'PProvost/vim-ps1'
-Plug 'stefandtw/quickfix-reflector.vim'
-Plug 'racer-rust/vim-racer'
+Plug 'Raimondi/delimitMate'
 Plug 'Shougo/deoplete.nvim'
 Plug 'TyOverby/vim-entangle'
+Plug 'airblade/vim-gitgutter'
+Plug 'cespare/vim-toml'
+Plug 'ctrlpvim/ctrlp.vim'
+Plug 'jistr/vim-nerdtree-tabs'
+Plug 'leafgarland/typescript-vim'
+Plug 'morhetz/gruvbox'
+Plug 'othree/html5.vim'
+Plug 'plasticboy/vim-markdown'
+Plug 'racer-rust/vim-racer'
+Plug 'rust-lang/rust.vim'
+Plug 'scrooloose/nerdtree'
+Plug 'stefandtw/quickfix-reflector.vim'
+Plug 'szw/vim-ctrlspace'
+Plug 'thirtythreeforty/lessspace.vim'
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-sensible'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-unimpaired'
+Plug 'w0rp/ale'
 call plug#end()
 
 
@@ -84,8 +85,8 @@ hi! GruvboxRedSign ctermfg=167 ctermbg=None guifg=#fb4934 guibg=#3c3836
 
 hi! link ALEErrorSign GruvboxRedSign
 hi! link ALEWarningSign GruvboxRedSign
-hi! ALEErrorLine ctermbg=167 ctermfg=black
-hi! ALEWarningLine ctermbg=brown ctermfg=black
+hi! ALEErrorLine ctermbg=darkred
+hi! ALEWarningLine ctermbg=brown 
 
 " No highlighting on quickfix lines
 hi! link QuickFixLine Normal
@@ -142,8 +143,9 @@ nnoremap <C-Space> :CtrlSpace<CR>
 " Ale
 let g:ale_rust_cargo_use_check=1
 let g:ale_sign_column_always = 1
-let g:ale_set_loclist = 0
-let g:ale_set_quickfix = 1
+let g:ale_set_loclist = 1
+let g:ale_set_quickfix = 0
+let g:ale_lint_on_text_changed = 'never'
 let g:ale_open_list = 1
 let g:ale_sign_error = '->'
 let g:ale_sign_warning = '->'
@@ -193,6 +195,9 @@ vnoremap <Leader><Space> :EntangleSend<CR>
 
 " Terminal
 tnoremap <C-w> <C-\><C-n><C-w>
+" Fix the following from stomping on non-term windows
+autocmd BufEnter * stopinsert 
+" Automatically enter insert-mode for terminal windows
 augroup terminal_insert
     autocmd!
     autocmd BufEnter term://* startinsert

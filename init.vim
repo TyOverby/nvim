@@ -8,6 +8,10 @@ Plug 'Shougo/echodoc.vim'
 " Theme
 Plug 'morhetz/gruvbox'
 
+" Git
+Plug 'Xuyuanp/nerdtree-git-plugin'
+Plug 'tpope/vim-fugitive'
+
 " Utility
 Plug 'tpope/vim-sensible'
 Plug 'scrooloose/nerdtree'
@@ -143,11 +147,6 @@ let g:auto_save = 1
 let g:auto_save_silent = 1
 let g:auto_save_in_insert_mode = 0
 
-
-" Git Gutter
-let g:gitgutter_realtime = 0
-let g:gitgutter_eager = 0
-set signcolumn=yes
 
 " Ctrl Space
 let g:CtrlSpaceSearchTiming = 10

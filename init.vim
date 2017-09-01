@@ -9,7 +9,6 @@ Plug 'Shougo/echodoc.vim'
 Plug 'morhetz/gruvbox'
 
 " Git
-Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'tpope/vim-fugitive'
 
 " Utility
@@ -107,6 +106,8 @@ hi! link ALEWarningSign GruvboxRedSign
 hi! ALEErrorLine ctermbg=darkred
 hi! ALEWarningLine ctermbg=brown 
 
+set noshowcmd
+
 " No highlighting on quickfix lines
 hi! link QuickFixLine Normal
 
@@ -129,18 +130,6 @@ let g:NERDTreeDirArrows = 1
 let g:NERDTreeDirArrowExpandable = '▸'
 let g:NERDTreeDirArrowCollapsible = '▾'
 let g:NERDTreeCascadeOpenSingleChildDir = 1
-let g:NERDTreeIndicatorMapCustom = {
-    \ "Modified"  : "*",
-    \ "Staged"    : "+",
-    \ "Untracked" : "@",
-    \ "Renamed"   : "-",
-    \ "Unmerged"  : "=",
-    \ "Deleted"   : "x",
-    \ "Dirty"     : "-",
-    \ "Clean"     : "o",
-    \ "Unknown"   : "?"
-    \ }
-
 
 " Auto Save
 let g:auto_save = 1
@@ -150,7 +139,7 @@ let g:auto_save_in_insert_mode = 0
 
 " Ctrl Space
 let g:CtrlSpaceSearchTiming = 10
-nnoremap <C-Space> :CtrlSpace<CR>
+nnoremap <silent><C-Space> :CtrlSpace<CR>
 
 
 " Ale
@@ -178,9 +167,6 @@ let g:deoplete#auto_complete_start_length = 2
 let g:deoplete#max_list = 50
 inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<CR>"
 inoremap <expr> <TAB> pumvisible() ? "\<C-y>" : "<C-x><C-o>"
-" inoremap <silent><expr> <Tab> pumvisible() ? deoplete#mappings#close_popup() : "<C-x><C-o>"
-" inoremap <silent><expr> <CR>  pumvisible() ? deoplete#mappings#close_popup() : "\<CR>"
-" inoremap <silent><expr> <Nul> pumvisible() ? "" : deoplete#mappings#manual_complete()
 inoremap <C-Space> <C-x><C-o>
 inoremap <C-@> <C-x><C-o>
 inoremap <Nul> <C-x><C-o>
@@ -209,11 +195,6 @@ function! IndentWithI()
     endif
 endfunction
 nnoremap <expr> i IndentWithI()
-
-
-" Entangle 
-nnoremap <Leader><Space> :EntangleSend<CR>
-vnoremap <Leader><Space> :EntangleSend<CR>
 
 
 " Terminal

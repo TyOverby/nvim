@@ -1,7 +1,6 @@
 " Plugins
 call plug#begin('~/.config/nvim/plugged')
 " Autocomplete
-Plug 'Shougo/deoplete.nvim'
 Plug 'autozimu/LanguageClient-neovim', { 'do': ':UpdateRemotePlugins' }
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'Shougo/echodoc.vim'
@@ -53,7 +52,10 @@ let g:terminal_scrollback_buffer_size=100000
 
 
 " Language Server
-let g:LanguageClient_serverCommands = { 'rust': ['rustup', 'run', 'nightly', 'rls'] }
+let g:LanguageClient_serverCommands = {  
+    \ 'rust': ['rustup', 'run', 'nightly', 'rls'], 
+    \ 'typescript': ['javascript-typescript-stdio']
+\ }
 let g:LanguageClient_autoStart = 1
 nnoremap <silent> K :call LanguageClient_textDocument_hover()<CR>
 nnoremap <silent> gd :call LanguageClient_textDocument_definition()<CR>
@@ -165,18 +167,25 @@ let g:ale_lint_on_save = 0
 let g:ale_lint_on_enter = 0
 let g:ale_open_list = 0
 
+
+" Echodoc
+let g:echodoc#enable_at_startup = 1
+
+
 " Deoplete
 let g:deoplete#enable_at_startup = 1
 let g:deoplete#enable_refresh_always = 1
 let g:deoplete#auto_complete_start_length = 2
 let g:deoplete#max_list = 50
+inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<CR>"
+inoremap <expr> <TAB> pumvisible() ? "\<C-y>" : "<C-x><C-o>"
 " inoremap <silent><expr> <Tab> pumvisible() ? deoplete#mappings#close_popup() : "<C-x><C-o>"
 " inoremap <silent><expr> <CR>  pumvisible() ? deoplete#mappings#close_popup() : "\<CR>"
 " inoremap <silent><expr> <Nul> pumvisible() ? "" : deoplete#mappings#manual_complete()
 inoremap <C-Space> <C-x><C-o>
 inoremap <C-@> <C-x><C-o>
 inoremap <Nul> <C-x><C-o>
-set completeopt=menu,longest,preview,noinsert
+set completeopt=menu,longest,noinsert
 
 
 " Racer

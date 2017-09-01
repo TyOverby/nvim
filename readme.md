@@ -9,6 +9,18 @@ git clone https://github.com/TyOverby/nvim ~/.config/nvim
 nvim +PlugInstall +qall
 ```
 
+For language service integration
+
+```bash
+# JavaScript / TypeScript
+npm install -g javascript-typescript-langserver 
+
+# Rust
+rustup component add rls --toolchain nightly
+rustup component add rust-analysis --toolchain nightly
+rustup component add rust-src --toolchain nightly
+```
+
 ## Shortcuts / Keybindings
 
 I have a few custom keybingings to make my workflow quicker.

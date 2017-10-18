@@ -142,6 +142,7 @@ let g:auto_save_in_insert_mode = 0
 " Ctrl Space
 let g:CtrlSpaceSearchTiming = 10
 nnoremap <silent><C-Space> :CtrlSpace<CR>
+nnoremap <silent><Enter> :CtrlSpace<CR>
 
 
 " Ale

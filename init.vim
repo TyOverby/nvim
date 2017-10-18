@@ -92,7 +92,9 @@ hi EndOfBuffer ctermfg=bg
 set fillchars=
 
 hi! link CursorLineNr LineNr
-hi! VertSplit ctermbg=None
+hi! VertSplit ctermbg=bg
+hi! StatusLine ctermfg=bg ctermbg=bg
+hi! StatusLineNC ctermfg=bg ctermbg=bg
 hi! FoldColumn ctermbg=None
 hi! SignColumn ctermbg=None
 

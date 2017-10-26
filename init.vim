@@ -41,6 +41,7 @@ set nospell
 set nohlsearch
 set nobackup
 set noswapfile
+set nofixendofline
 set hidden
 set relativenumber number
 set nowrap

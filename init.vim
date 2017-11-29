@@ -24,6 +24,7 @@ Plug 'tpope/vim-surround'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'Raimondi/delimitMate'
 Plug 'w0rp/ale'
+Plug 'machakann/vim-highlightedyank'
 
 " Language
 Plug 'plasticboy/vim-markdown'

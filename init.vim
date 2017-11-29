@@ -53,6 +53,7 @@ set nofoldenable
 let loaded_matchparen=1
 let mapleader=","
 let g:terminal_scrollback_buffer_size=100000
+set inccommand=nosplit
 
 
 " Language Server

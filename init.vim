@@ -26,6 +26,7 @@ Plug 'Raimondi/delimitMate'
 Plug 'w0rp/ale'
 Plug 'TyOverby/vim-entangle'
 Plug 'Shougo/defx.nvim'
+Plug 'machakann/vim-highlightedyank'
 
 " Language
 Plug 'plasticboy/vim-markdown'
@@ -43,6 +44,7 @@ set nospell
 set nohlsearch
 set nobackup
 set noswapfile
+set nofixendofline
 set hidden
 set relativenumber number
 set nowrap
@@ -54,11 +56,12 @@ set nofoldenable
 let loaded_matchparen=1
 let mapleader=","
 let g:terminal_scrollback_buffer_size=100000
+set inccommand=nosplit
 
 
 " Language Server
-let g:LanguageClient_serverCommands = {  
-    \ 'rust': ['rustup', 'run', 'nightly', 'rls'], 
+let g:LanguageClient_serverCommands = {
+    \ 'rust': ['rustup', 'run', 'nightly', 'rls'],
     \ 'typescript': ['javascript-typescript-stdio']
 \ }
 let g:LanguageClient_autoStart = 1
@@ -108,7 +111,7 @@ hi! GruvboxRedSign ctermfg=167 ctermbg=None guifg=#fb4934 guibg=#3c3836
 hi! link ALEErrorSign GruvboxRedSign
 hi! link ALEWarningSign GruvboxRedSign
 hi! ALEErrorLine ctermbg=darkred
-hi! ALEWarningLine ctermbg=brown 
+hi! ALEWarningLine ctermbg=brown
 
 set noshowcmd
 
@@ -205,7 +208,7 @@ nnoremap <expr> i IndentWithI()
 " Terminal
 tnoremap <C-w> <C-\><C-n><C-w>
 " Fix the following from stomping on non-term windows
-autocmd BufEnter * stopinsert 
+autocmd BufEnter * stopinsert
 " Automatically enter insert-mode for terminal windows
 augroup terminal_insert
     autocmd!

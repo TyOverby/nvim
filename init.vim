@@ -2,11 +2,11 @@
 call plug#begin('~/.config/nvim/plugged')
 " Autocomplete
 Plug 'autozimu/LanguageClient-neovim', { 'do': ':UpdateRemotePlugins' }
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'Shougo/echodoc.vim'
 
 " Theme
 Plug 'morhetz/gruvbox'
+Plug 'NLKNguyen/papercolor-theme'
 
 " Git
 Plug 'tpope/vim-fugitive'
@@ -24,6 +24,8 @@ Plug 'tpope/vim-surround'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'Raimondi/delimitMate'
 Plug 'w0rp/ale'
+Plug 'TyOverby/vim-entangle'
+Plug 'Shougo/defx.nvim'
 
 " Language
 Plug 'plasticboy/vim-markdown'
@@ -210,3 +212,6 @@ augroup terminal_insert
     autocmd BufEnter term://* startinsert
     autocmd BufLeave term://* stopinsert
 augroup END
+
+" Entangle
+vnoremap <TAB> :EntangleSend<cr>

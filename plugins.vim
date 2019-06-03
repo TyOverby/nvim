@@ -1,6 +1,7 @@
 " Theme
 Plug 'morhetz/gruvbox'
 Plug 'flrnprz/plastic.vim'
+Plug 'gcmt/taboo.vim'
 
 " tpope
 Plug 'tpope/vim-sensible'

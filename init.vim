@@ -21,3 +21,4 @@ call s:sourcelocal('styles')
 " Configs
 call s:sourcelocal('config/merlin')
 call s:sourcelocal('config/deoplete')
+call s:sourcelocal('config/taboo')

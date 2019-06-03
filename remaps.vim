@@ -12,3 +12,6 @@ function! IndentWithI()
     endif
 endfunction
 nnoremap <expr> i IndentWithI()
+
+nnoremap <C-l> :tabnext<CR>
+nnoremap <C-h> :tabprev<CR>

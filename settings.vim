@@ -1,9 +1,11 @@
 set smartcase  " Switches between case-sensitive and insensitive search
 set smarttab   " Tab insert is determined by syntax
 set nohlsearch " Turn off obnoxious highlighting on previous search
+set completeopt-=preview
 
-set nobackup   " Turn off unsaved file backups
-set noswapfile " Turn off swap files
+set nobackup      " Turn off unsaved file backups
+set nowritebackup " Same as above?
+set noswapfile    " Don't produce .swp files
 
 set nofixendofline " Don't add \n to the end of a file automatically
 set hidden         " Allow you to leave files without having to save
@@ -11,13 +13,16 @@ set nowrap         " Disable text line wrapping
 set notimeout      " Don't wait for sequences
 set nottimeout     " Don't wait for sequences (terminal)
 set clipboard+=unnamedplus " Use system clipboard
+set cmdheight=2
+set signcolumn=yes
 
-set shortmess="aWIqF" " See following
+set shortmess="aWIqFc" " See following
 " a: Lots of shortened abbreviations, read the docs ':h shortmess'
 " W: No echo when writing a file
 " I: No intro message when opening vim
 " q: Use "recording" instead of "recording @a"
 " F: No file info
+" c: Hide completion messages
 
 set nofoldenable " All folds start enabled
 let g:terminal_scrollback_buffer_size=100000 " What it says on the tin
@@ -29,3 +34,5 @@ set tabstop=4
 set shiftwidth=4
 set expandtab
 filetype plugin indent on
+
+let g:netrw_home=$XDG_CACHE_HOME.'/vim' " Netrw history files go here

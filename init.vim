@@ -1,7 +1,7 @@
-let s:path = fnamemodify(resolve(expand('<sfile>:p')), ':h')
+let g:vimrc_path = fnamemodify(resolve(expand('<sfile>:p')), ':h')
 
 function! s:sourcelocal(path)
-  execute 'source ' . s:path . '/' . a:path . '.vim'
+  execute 'source ' . g:vimrc_path . '/' . a:path . '.vim'
 endfunction
 
 " Plugins
@@ -20,4 +20,4 @@ call s:sourcelocal('styles')
 
 " Configs
 call s:sourcelocal('config/merlin')
-call s:sourcelocal('config/defx')
+call s:sourcelocal('config/deoplete')

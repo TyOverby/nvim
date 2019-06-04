@@ -16,7 +16,8 @@ set clipboard+=unnamedplus " Use system clipboard
 set cmdheight=2
 set signcolumn=yes
 
-set shortmess="aWIqFc" " See following
+set shortmess=aWIqFc
+" See following
 " a: Lots of shortened abbreviations, read the docs ':h shortmess'
 " W: No echo when writing a file
 " I: No intro message when opening vim

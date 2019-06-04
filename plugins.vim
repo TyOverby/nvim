@@ -18,6 +18,7 @@ Plug 'szw/vim-ctrlspace'
 Plug 'w0rp/ale'
 Plug 'TyOverby/vim-entangle'
 Plug 'machakann/vim-highlightedyank'
+Plug 'moll/vim-bbye'
 
 " Language
 Plug 'gabrielelana/vim-markdown', { 'for': 'markdown' }

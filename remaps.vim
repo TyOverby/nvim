@@ -24,3 +24,14 @@ nnoremap s <C-W>
 nnoremap <C-W> :echo "USE S"<CR>
 autocmd filetype netrw nnoremap <buffer> s <C-W>
 autocmd filetype netrw nnoremap <buffer> <C-W> :echo "USE S"<CR>
+
+" Ctrl Space
+let g:CtrlSpaceSearchTiming = 10
+nnoremap <silent><C-Space> :CtrlSpace<CR>
+nnoremap <silent><Enter> :CtrlSpace<CR>
+
+nnoremap <silent><leader>t :MerlinTypeOf<cr>
+
+" Fzf
+nnoremap <silent><C-p> :FzfFiles<CR>
+nnoremap <silent><C-f> :FzfAg<cr>

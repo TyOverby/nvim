@@ -10,7 +10,7 @@ set noswapfile    " Don't produce .swp files
 set nofixendofline " Don't add \n to the end of a file automatically
 set hidden         " Allow you to leave files without having to save
 set nowrap         " Disable text line wrapping
-set notimeout      " Don't wait for sequences
+set timeoutlen=100 " Mainly for which_key
 set nottimeout     " Don't wait for sequences (terminal)
 set clipboard+=unnamedplus " Use system clipboard
 set cmdheight=2
@@ -37,3 +37,7 @@ set expandtab
 filetype plugin indent on
 
 let g:netrw_home=$XDG_CACHE_HOME.'/vim' " Netrw history files go here
+
+let g:fzf_command_prefix="Fzf"
+let mapleader=","
+set diffopt=internal,iwhiteall,algorithm:patience,context:10,filler

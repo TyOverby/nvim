@@ -1,11 +1,13 @@
 set smartcase  " Switches between case-sensitive and insensitive search
 set smarttab   " Tab insert is determined by syntax
 set nohlsearch " Turn off obnoxious highlighting on previous search
-set completeopt-=preview
+set completeopt-=preview " Dunno
 
 set nobackup      " Turn off unsaved file backups
 set nowritebackup " Same as above?
 set noswapfile    " Don't produce .swp files
+set scrolloff=0   " Keep the cursor from getting pushed by the window
+set sessionoptions=buffers,curdir,globals,localoptions,options,winsize,terminal,tabpages
 
 set nofixendofline " Don't add \n to the end of a file automatically
 set hidden         " Allow you to leave files without having to save

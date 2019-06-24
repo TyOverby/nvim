@@ -2,6 +2,7 @@
 Plug 'morhetz/gruvbox'
 Plug 'flrnprz/plastic.vim'
 Plug 'gcmt/taboo.vim'
+Plug 'rakr/vim-two-firewatch'
 
 " tpope
 Plug 'tpope/vim-sensible'
@@ -14,6 +15,7 @@ Plug 'tpope/vim-vinegar'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --bin' }
 Plug 'junegunn/fzf.vim'
 
+Plug 'blueyed/vim-qf_resize'
 Plug 'szw/vim-ctrlspace'
 Plug 'w0rp/ale'
 Plug 'TyOverby/vim-entangle'

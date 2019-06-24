@@ -7,7 +7,7 @@ set nobackup      " Turn off unsaved file backups
 set nowritebackup " Same as above?
 set noswapfile    " Don't produce .swp files
 set scrolloff=0   " Keep the cursor from getting pushed by the window
-set sessionoptions=buffers,curdir,globals,localoptions,options,winsize,terminal,tabpages
+set sessionoptions=buffers,curdir,globals,localoptions,options,winsize,tabpages
 
 set nofixendofline " Don't add \n to the end of a file automatically
 set hidden         " Allow you to leave files without having to save

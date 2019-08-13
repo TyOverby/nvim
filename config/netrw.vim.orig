@@ -39,9 +39,13 @@ function! NetrwMapping()
     let g:netrw_list_hide .= ',.*\.cmt$'
     let g:netrw_list_hide .= ',.*\.d$'
     let g:netrw_list_hide .= ',.*\.cmx$'
+<<<<<<< HEAD
+=======
+
     let g:netrw_list_hide .= ',fgrep_expect_tests.out$'
     let g:netrw_list_hide .= ',fgrep_inline_tests.out$'
     let g:netrw_list_hide .= ',fgrep_bench.out$'
     let g:netrw_list_hide .= ',inline_tests_runner'
     let g:netrw_list_hide .= ',inline_tests_runner.exe'
+>>>>>>> update-branch-67e21006aec33fc2be2126e27bbbe42e883ff5fc-0794c8d366c5fb74a78a9375cc74a78f97135e9b
 endfunction

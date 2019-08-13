@@ -1,4 +1,4 @@
-set notermguicolors
+<<<<<<< HEAD
 function! g:LightTheme() 
     set background=light
     colorscheme two-firewatch 
@@ -41,3 +41,19 @@ call g:DarkTheme()
 
 command! DarkTheme :call g:DarkTheme()
 command! LightTheme :call g:LightTheme()
+=======
+set notermguicolors
+colorscheme plastic
+
+hi! SignColumn ctermbg=bg guibg=bg 
+hi! VertSplit ctermbg=bg guibg=bg guifg=#000000
+hi! StatusLineNC ctermbg=bg guibg=bg 
+hi! ALEErrorLine ctermbg=52 guibg=52
+hi! ALEWarningLine ctermbg=236 guibg=236
+hi! EndOfBuffer ctermbg=bg ctermfg=bg guibg=bg guifg=bg
+hi! link EnclosingExpr Search
+hi! link ALEErrorSign GruvboxRed
+hi! link ALEWarningSign GruvboxOrange
+hi! link TabLine StatusLine
+hi! link TabLineFill StatusLine
+>>>>>>> update-branch-67e21006aec33fc2be2126e27bbbe42e883ff5fc-0794c8d366c5fb74a78a9375cc74a78f97135e9b

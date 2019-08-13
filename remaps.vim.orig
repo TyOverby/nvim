@@ -30,11 +30,20 @@ nnoremap <C-W> :echo "USE S"<CR>
 autocmd filetype netrw nnoremap <buffer> s <C-W>
 autocmd filetype netrw nnoremap <buffer> <C-W> :echo "USE S"<CR>
 
+<<<<<<< HEAD
+" Ctrl Space
+let g:CtrlSpaceSearchTiming = 10
+nnoremap <silent><C-Space> :CtrlSpace<CR>
+nnoremap <silent><Enter> :CtrlSpace<CR>
+
+nnoremap <silent><leader>t :MerlinTypeOf<cr>
+=======
 
 nnoremap <silent><leader>t :MerlinTypeOf<CR>
 vnoremap <silent><leader>t :MerlinTypeOfSel<CR>
 nnoremap <silent><leader>d :MerlinLocate<CR>
 nnoremap <silent><leader>i :MerlinILocate<CR>
+>>>>>>> update-branch-67e21006aec33fc2be2126e27bbbe42e883ff5fc-0794c8d366c5fb74a78a9375cc74a78f97135e9b
 
 " Fzf
 nnoremap <silent><C-p> :FzfFiles<CR>

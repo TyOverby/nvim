@@ -4,9 +4,12 @@ let g:bundles_loaded = 1
 Plug 'morhetz/gruvbox'
 Plug 'flrnprz/plastic.vim'
 Plug 'gcmt/taboo.vim'
+<<<<<<< HEAD
 Plug 'rakr/vim-two-firewatch'
+=======
 Plug 'sainnhe/vim-color-desert-night'
 Plug 'junegunn/goyo.vim', { 'on': 'Goyo' }
+>>>>>>> update-branch-67e21006aec33fc2be2126e27bbbe42e883ff5fc-0794c8d366c5fb74a78a9375cc74a78f97135e9b
 
 " tpope
 Plug 'tpope/vim-sensible'
@@ -20,7 +23,11 @@ Plug 'tpope/vim-sleuth'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --bin' }
 Plug 'junegunn/fzf.vim'
 
+<<<<<<< HEAD
 Plug 'blueyed/vim-qf_resize'
+Plug 'szw/vim-ctrlspace'
+=======
+>>>>>>> update-branch-67e21006aec33fc2be2126e27bbbe42e883ff5fc-0794c8d366c5fb74a78a9375cc74a78f97135e9b
 Plug 'w0rp/ale'
 Plug 'TyOverby/vim-entangle'
 Plug 'machakann/vim-highlightedyank'

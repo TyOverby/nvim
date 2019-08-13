@@ -28,6 +28,10 @@ call s:sourcelocal('config/deoplete')
 call s:sourcelocal('config/taboo')
 call s:sourcelocal('config/which_key')
 call s:sourcelocal('config/netrw')
+<<<<<<< HEAD
+call s:sourcelocal('config/ale')
+=======
 
 " TODO: https://github.com/ncm2/float-preview.nvim
 " TODO: https://github.com/junegunn/fzf.vim/issues/664 
+>>>>>>> update-branch-67e21006aec33fc2be2126e27bbbe42e883ff5fc-0794c8d366c5fb74a78a9375cc74a78f97135e9b

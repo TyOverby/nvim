@@ -5,13 +5,9 @@ function! s:sourcelocal(path)
 endfunction
 
 " Plugins
-if g:bundles_loaded
-    " do nothing 
-else
-    call plug#begin('~/.config/nvim/plugged')
-        call s:sourcelocal('plugins')
-    call plug#end()
-endif
+call plug#begin('~/.config/nvim/plugged')
+    call s:sourcelocal('plugins')
+call plug#end()
 
 " Settings
 call s:sourcelocal('settings')
@@ -26,8 +22,3 @@ call s:sourcelocal('styles')
 call s:sourcelocal('config/merlin')
 call s:sourcelocal('config/deoplete')
 call s:sourcelocal('config/taboo')
-call s:sourcelocal('config/which_key')
-call s:sourcelocal('config/netrw')
-
-" TODO: https://github.com/ncm2/float-preview.nvim
-" TODO: https://github.com/junegunn/fzf.vim/issues/664 

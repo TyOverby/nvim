@@ -1,10 +1,15 @@
-tnoremap <esc> <C-\><C-n>      " Get my escape key back
-nnoremap Y y$                  " Y is vimy
-tnoremap <C-w> <C-\><C-n><C-w> " <C-w> is normal too
-nnoremap <silent><C-l> :tabnext<CR>    " Easy tab navigation
-nnoremap <silent><C-h> :tabprev<CR>    " Same ya'know
+" Get my escape key back
+tnoremap <esc> <C-\><C-n>      
+" Y is vimy
+nnoremap Y y$ 
+ " <C-w> is normal too
+tnoremap <C-w> <C-\><C-n><C-w>
+" Easy tab navigation
+nnoremap <silent><C-l> :tabnext<CR>
+nnoremap <silent><C-h> :tabprev<CR>
 
-nnoremap <silent><leader>q :Bdelete!<cr> " Delete buffers without killing window
+ " Delete buffers without killing window
+nnoremap <silent><leader>q :Bdelete!<cr>
 
 " Indent (like 'o') but with 'i'
 function! IndentWithI()
@@ -24,3 +29,13 @@ nnoremap s <C-W>
 nnoremap <C-W> :echo "USE S"<CR>
 autocmd filetype netrw nnoremap <buffer> s <C-W>
 autocmd filetype netrw nnoremap <buffer> <C-W> :echo "USE S"<CR>
+
+
+nnoremap <silent><leader>t :MerlinTypeOf<CR>
+vnoremap <silent><leader>t :MerlinTypeOfSel<CR>
+nnoremap <silent><leader>d :MerlinLocate<CR>
+nnoremap <silent><leader>i :MerlinILocate<CR>
+
+" Fzf
+nnoremap <silent><C-p> :FzfFiles<CR>
+nnoremap <silent><C-f> :FzfAg<cr>

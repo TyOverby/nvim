@@ -15,9 +15,10 @@ Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-vinegar'
 Plug 'tpope/vim-sleuth' 
+Plug 'tpope/vim-markdown', { 'for': 'markdown' }
 
 " Utility
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --bin' }
+Plug 'junegunn/fzf', { 'dir': '/usr/local/home/toverby/fzf', 'do': './install --bin' }
 Plug 'junegunn/fzf.vim'
 
 Plug 'blueyed/vim-qf_resize'
@@ -28,7 +29,6 @@ Plug 'moll/vim-bbye'
 Plug 'liuchengxu/vim-which-key'
 
 " Language
-Plug 'gabrielelana/vim-markdown', { 'for': 'markdown' }
 Plug 'rgrinberg/vim-ocaml', { 'for': ['ocaml', 'dune'] }
 " Plug '~/.opam/4.07.0/share/merlin/vim/', {'for': ['ocaml']}
 Plug 'w0rp/ale', { 'for': ['ocaml'] }

@@ -21,15 +21,18 @@ function! IndentWithI()
 endfunction
 nnoremap <expr> i IndentWithI()
 
+function! BetterSplit ()
+  split
+  execute "normal zb"
+  wincmd j
+  execute "normal zb"
+  wincmd k
+endfunction
 
-" Instead of using '<c-w>' for window management, use 's'
-" Bindings for netrw are also necessary because of course it is
-" accidentally using 'c-w' results in a warning message and nothing else
+nnoremap <C-W>s :call BetterSplit()<CR>
 nnoremap s <C-W>
-nnoremap <C-W> :echo "USE S"<CR>
-autocmd filetype netrw nnoremap <buffer> s <C-W>
-autocmd filetype netrw nnoremap <buffer> <C-W> :echo "USE S"<CR>
-
+nnoremap ss :call BetterSplit()<CR>
+autocmd filetype netrw nmap <buffer> s <C-W>
 
 nnoremap <silent><leader>t :MerlinTypeOf<CR>
 vnoremap <silent><leader>t :MerlinTypeOfSel<CR>

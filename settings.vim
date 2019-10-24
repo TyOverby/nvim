@@ -3,11 +3,31 @@ set smarttab   " Tab insert is determined by syntax
 set nohlsearch " Turn off obnoxious highlighting on previous search
 set completeopt-=preview " Dunno
 
+set autowriteall " Automatically save files when buffers leave
+
+set undolevels=1048576
+set undofile
+set undodir=/tmp
+
 set nobackup      " Turn off unsaved file backups
 set nowritebackup " Same as above?
 set noswapfile    " Don't produce .swp files
 set scrolloff=0   " Keep the cursor from getting pushed by the window
-set sessionoptions=buffers,curdir,globals,localoptions,options,winsize,tabpages
+set sessionoptions=
+set sessionoptions+=blank
+set sessionoptions+=buffers
+set sessionoptions+=globals
+set sessionoptions+=curdir
+set sessionoptions+=folds
+set sessionoptions+=globals
+set sessionoptions+=help
+set sessionoptions+=localoptions
+set sessionoptions+=options
+set sessionoptions+=resize
+set sessionoptions+=tabpages
+"set sessionoptions+=terminal Broken somehow?
+set sessionoptions+=winpos
+set sessionoptions+=winsize
 
 set nofixendofline " Don't add \n to the end of a file automatically
 set hidden         " Allow you to leave files without having to save

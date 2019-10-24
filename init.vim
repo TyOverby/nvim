@@ -28,6 +28,7 @@ call s:sourcelocal('config/deoplete')
 call s:sourcelocal('config/taboo')
 call s:sourcelocal('config/which_key')
 call s:sourcelocal('config/netrw')
+call s:sourcelocal('config/vim-markdown')
 
 " TODO: https://github.com/ncm2/float-preview.nvim
 " TODO: https://github.com/junegunn/fzf.vim/issues/664 

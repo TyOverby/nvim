@@ -1,4 +1,7 @@
 set notermguicolors
+
+hi! link EnclosingExpr Search
+
 function! g:LightTheme() 
     set background=light
     colorscheme two-firewatch 
@@ -21,7 +24,7 @@ endfunction
 
 function! g:DarkTheme() 
     set background=dark
-    colorscheme plastic
+    colorscheme gruvbox
 
     hi! TabLineFill cterm=None ctermbg=234
     hi! TabLine cterm=None ctermbg=234

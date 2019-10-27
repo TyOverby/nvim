@@ -5,7 +5,6 @@ Plug 'gcmt/taboo.vim'
 Plug 'rakr/vim-two-firewatch'
 
 " tpope
-Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-surround'
@@ -16,7 +15,6 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --bin' }
 Plug 'junegunn/fzf.vim'
 
 Plug 'blueyed/vim-qf_resize'
-Plug 'szw/vim-ctrlspace'
 Plug 'w0rp/ale'
 Plug 'TyOverby/vim-entangle'
 Plug 'machakann/vim-highlightedyank'
@@ -26,7 +24,13 @@ Plug 'liuchengxu/vim-which-key'
 " Language
 Plug 'gabrielelana/vim-markdown', { 'for': 'markdown' }
 Plug 'rgrinberg/vim-ocaml', { 'for': ['ocaml', 'dune'] }
-Plug '~/.opam/4.07.0/share/merlin/vim/', {'for': ['ocaml']}
 Plug 'w0rp/ale', { 'for': ['ocaml'] }
-Plug 'Shougo/deoplete.nvim', { 'for': 'ocaml' , 'do': ':UpdateRemotePlugins' }
-Plug 'copy/deoplete-ocaml', { 'for': 'ocaml' }
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+Plug 'copy/deoplete-ocaml'
+
+if (isdirectory(expand("./_opam")))
+    echom "loading merlin"
+    exe 'set rtp+=' . expand("./_opam/share/merlin/vim/")
+else 
+    echom "not loading merlin"
+endif 

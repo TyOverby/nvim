@@ -4,13 +4,13 @@ function! s:sourcelocal(path)
   execute 'source ' . g:vimrc_path . '/' . a:path . '.vim'
 endfunction
 
+" Settings
+call s:sourcelocal('settings')
+
 " Plugins
 call plug#begin('~/.config/nvim/plugged')
     call s:sourcelocal('plugins')
 call plug#end()
-
-" Settings
-call s:sourcelocal('settings')
 
 " Remaps
 call s:sourcelocal('remaps')
@@ -25,3 +25,5 @@ call s:sourcelocal('config/taboo')
 call s:sourcelocal('config/which_key')
 call s:sourcelocal('config/netrw')
 call s:sourcelocal('config/ale')
+
+set scrolloff=0

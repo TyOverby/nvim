@@ -13,8 +13,8 @@ function! g:LightTheme()
     hi! SignColumn ctermbg=None
     hi! link ALEErrorSign GruvboxRed
     hi! link ALEWarningSign GruvboxOrange
-    hi! ALEErrorLine ctermbg=52
-    hi! ALEWarningLine ctermbg=236
+    hi! ALEErrorLine ctermbg=bg
+    hi! ALEWarningLine ctermbg=bg
     hi! EndOfBuffer ctermbg=bg ctermfg=bg guibg=bg guifg=bg
 endfunction
 

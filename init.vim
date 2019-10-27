@@ -8,10 +8,10 @@ endfunction
 call s:sourcelocal('settings')
 
 " Plugins
-if g:bundles_loaded
+if exists("g:bundles_loaded")
     " do nothing 
 else
-    call plug#begin('~/.config/nvim/plugged')
+    call plug#begin(g:vimrc_path . '/plugged')
         call s:sourcelocal('plugins')
     call plug#end()
 endif

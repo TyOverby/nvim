@@ -39,4 +39,9 @@ function! NetrwMapping()
     let g:netrw_list_hide .= ',.*\.cmt$'
     let g:netrw_list_hide .= ',.*\.d$'
     let g:netrw_list_hide .= ',.*\.cmx$'
+    let g:netrw_list_hide .= ',fgrep_expect_tests.out$'
+    let g:netrw_list_hide .= ',fgrep_inline_tests.out$'
+    let g:netrw_list_hide .= ',fgrep_bench.out$'
+    let g:netrw_list_hide .= ',inline_tests_runner'
+    let g:netrw_list_hide .= ',inline_tests_runner.exe'
 endfunction

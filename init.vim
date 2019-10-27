@@ -8,9 +8,13 @@ endfunction
 call s:sourcelocal('settings')
 
 " Plugins
-call plug#begin('~/.config/nvim/plugged')
-    call s:sourcelocal('plugins')
-call plug#end()
+if g:bundles_loaded
+    " do nothing 
+else
+    call plug#begin('~/.config/nvim/plugged')
+        call s:sourcelocal('plugins')
+    call plug#end()
+endif
 
 " Remaps
 call s:sourcelocal('remaps')
@@ -25,5 +29,11 @@ call s:sourcelocal('config/taboo')
 call s:sourcelocal('config/which_key')
 call s:sourcelocal('config/netrw')
 call s:sourcelocal('config/ale')
+call s:sourcelocal('config/vim-markdown')
 
+" Don't put this in settings because someone overrides it in 
+" a plugin :(
 set scrolloff=0
+
+" TODO: https://github.com/ncm2/float-preview.nvim
+" TODO: https://github.com/junegunn/fzf.vim/issues/664 

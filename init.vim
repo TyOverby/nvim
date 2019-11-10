@@ -6,6 +6,7 @@ endfunction
 
 " Settings
 call s:sourcelocal('settings')
+call s:sourcelocal('leader_organization')
 
 " Plugins
 if exists("g:bundles_loaded")

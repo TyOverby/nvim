@@ -62,4 +62,5 @@ let g:netrw_home=$XDG_CACHE_HOME.'/vim' " Netrw history files go here
 
 let g:fzf_command_prefix="Fzf"
 let mapleader=","
+map <space> <Leader>
 set diffopt=internal,iwhiteall,algorithm:patience,context:10,filler

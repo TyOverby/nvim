@@ -34,8 +34,5 @@ Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'copy/deoplete-ocaml'
 
 if (isdirectory(expand("./_opam")))
-    echom "loading merlin from local opam"
     exe 'set rtp+=' . expand("./_opam/share/merlin/vim/")
-else 
-    echom "not loading merlin from local opam"
-endif 
+endif

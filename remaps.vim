@@ -32,4 +32,5 @@ autocmd filetype netrw nmap <buffer> s <C-W>
 
 " Fzf
 nnoremap <silent><C-p> :FzfFiles<CR>
+nnoremap <silent><C-Space> :FzfChanged<CR>
 nnoremap <silent><C-f> :FzfAg<cr>

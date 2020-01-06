@@ -62,10 +62,15 @@ let g:netrw_home=$XDG_CACHE_HOME.'/vim' " Netrw history files go here
 
 let g:fzf_command_prefix="Fzf"
 let mapleader=","
+<<<<<<< HEAD
 map <space> <Leader>
+set diffopt=internal,iwhiteall,algorithm:patience,context:10,filler
+=======
 set diffopt=internal,algorithm:patience,context:10,filler
+" set diffopt += iwhiteall
 
-" Folds
 set foldmethod=indent
 set fillchars=fold:\ 
 set foldtext=getline(v:foldstart)
+
+>>>>>>> update-branch-61394a31a2491f9249bba4be7345d53e856fae5f-2eca1e328e290c01c13dff2eb255db553937d2ed

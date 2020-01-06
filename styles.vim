@@ -12,7 +12,7 @@ function! g:LightTheme()
 
     hi! StatusLine cterm=None ctermbg=188
     hi! StatusLineNC cterm=None ctermbg=188 
-    hi! VertSplit ctermbg=188 ctermfg=188
+    hi! VertSplit ctermbg=None ctermfg=188
     hi! StatusLineNC ctermbg=None
     hi! SignColumn ctermbg=None
     hi! link ALEErrorSign GruvboxRed
@@ -26,17 +26,18 @@ function! g:DarkTheme()
     set background=dark
     colorscheme gruvbox
 
-    hi! TabLineFill cterm=None ctermbg=234
-    hi! TabLine cterm=None ctermbg=234
-    hi! TabLineSel cterm=None ctermbg=234
+    hi! TabLineFill    ctermbg=234  ctermfg=223 cterm=None
+    hi! TabLine        ctermbg=234  ctermfg=223 cterm=None
+    hi! TabLineSel     ctermbg=234  cterm=None
 
-    hi! StatusLineNC ctermbg=None
-    hi! SignColumn ctermbg=None
-    hi! VertSplit ctermbg=234 ctermfg=234
+    hi! StatusLineNC   ctermbg=223 ctermfg=234
+    hi! StatusLine     ctermbg=223 ctermfg=234
+    hi! SignColumn     ctermbg=None
+    hi! VertSplit      ctermbg=None ctermfg=234
+    hi! ALEErrorLine   ctermbg=52
+    hi! ALEWarningLine ctermbg=236
     hi! link ALEErrorSign GruvboxRed
     hi! link ALEWarningSign GruvboxOrange
-    hi! ALEErrorLine ctermbg=52
-    hi! ALEWarningLine ctermbg=236
     hi! EndOfBuffer ctermbg=bg ctermfg=bg guibg=bg guifg=bg
 endfunction
 

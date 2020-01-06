@@ -62,4 +62,10 @@ let g:netrw_home=$XDG_CACHE_HOME.'/vim' " Netrw history files go here
 
 let g:fzf_command_prefix="Fzf"
 let mapleader=","
-set diffopt=internal,iwhiteall,algorithm:patience,context:10,filler
+set diffopt=internal,algorithm:patience,context:10,filler
+" set diffopt += iwhiteall
+
+set foldmethod=indent
+set fillchars=fold:\ 
+set foldtext=getline(v:foldstart)
+

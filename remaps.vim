@@ -41,4 +41,5 @@ nnoremap <silent><leader>i :MerlinILocate<CR>
 
 " Fzf
 nnoremap <silent><C-p> :FzfFiles<CR>
+nnoremap <silent><C-Space> :FzfChanged<CR>
 nnoremap <silent><C-f> :FzfAg<cr>

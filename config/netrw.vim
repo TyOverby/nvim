@@ -11,6 +11,9 @@ endfunction
 function! NetrwMapping()
     nnoremap <buffer>t :call OpenTerm()<CR>
 
+    nunmap <C-l>
+    nnoremap <C-l> :tabnext<CR>
+
     let g:netrw_list_hide = ''
     let g:netrw_list_hide .= ',^\./$'
     let g:netrw_list_hide .= ',.*\.modules$'
@@ -33,6 +36,9 @@ function! NetrwMapping()
     let g:netrw_list_hide .= ',.*\.cmxa$'
     let g:netrw_list_hide .= ',.*\.deps$'
     let g:netrw_list_hide .= ',.*\.o$'
+    let g:netrw_list_hide .= ',.*\.docpub_html$'
+    let g:netrw_list_hide .= ',.*\.confluence_metadata$'
+    let g:netrw_list_hide .= ',.*\.confluence_xml$'
     let g:netrw_list_hide .= ',.*\.cmi$'
     let g:netrw_list_hide .= ',.*\.a$'
     let g:netrw_list_hide .= ',.*\.cmti$'
@@ -43,5 +49,7 @@ function! NetrwMapping()
     let g:netrw_list_hide .= ',fgrep_inline_tests.out$'
     let g:netrw_list_hide .= ',fgrep_bench.out$'
     let g:netrw_list_hide .= ',inline_tests_runner'
+    let g:netrw_list_hide .= ',ocaml-mdx.toplevel.info.c$'
+    let g:netrw_list_hide .= ',ocaml-mdx'
     let g:netrw_list_hide .= ',inline_tests_runner.exe'
 endfunction

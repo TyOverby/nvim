@@ -24,6 +24,7 @@ endfunction
 
 function! g:DarkTheme() 
     set background=dark
+    let g:gruvbox_contrast_dark="hard"
     colorscheme gruvbox
 
     hi! TabLineFill    ctermbg=234  ctermfg=223 cterm=None

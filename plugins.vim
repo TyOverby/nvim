@@ -4,7 +4,8 @@ let g:bundles_loaded = 1
 Plug 'morhetz/gruvbox'
 Plug 'flrnprz/plastic.vim'
 Plug 'gcmt/taboo.vim'
-Plug 'rakr/vim-two-firewatch'
+Plug 'rakr/vim-two-firewatch' 
+Plug 'ewilazarus/preto'
 Plug 'junegunn/goyo.vim', { 'on': 'Goyo' }
 
 " tpope
@@ -20,7 +21,6 @@ Plug 'junegunn/fzf', { 'dir': '/usr/local/home/$USER/fzf', 'do': './install --bi
 Plug 'junegunn/fzf.vim'
 
 Plug 'blueyed/vim-qf_resize'
-Plug 'w0rp/ale'
 Plug 'TyOverby/vim-entangle'
 Plug 'machakann/vim-highlightedyank'
 Plug 'moll/vim-bbye'
@@ -28,7 +28,7 @@ Plug 'liuchengxu/vim-which-key'
 
 " Language
 Plug 'rgrinberg/vim-ocaml', { 'for': ['ocaml', 'dune'] }
-Plug 'w0rp/ale', { 'for': ['ocaml'] }
+Plug 'w0rp/ale'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'copy/deoplete-ocaml' 
 Plug 'jceb/vim-orgmode'

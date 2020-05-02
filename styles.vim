@@ -22,6 +22,7 @@ function! g:LightTheme()
     hi! EndOfBuffer ctermbg=bg ctermfg=bg guibg=bg guifg=bg
 endfunction
 
+
 function! g:DarkTheme() 
     set background=dark
     colorscheme gruvbox
@@ -33,7 +34,7 @@ function! g:DarkTheme()
     hi! StatusLineNC   ctermbg=223 ctermfg=234
     hi! StatusLine     ctermbg=223 ctermfg=234
     hi! SignColumn     ctermbg=None
-    hi! VertSplit      ctermbg=None ctermfg=234
+    hi! VertSplit      ctermbg=234 ctermfg=234
     hi! ALEErrorLine   ctermbg=52
     hi! ALEWarningLine ctermbg=236
     hi! link ALEErrorSign GruvboxRed
@@ -43,5 +44,6 @@ endfunction
 
 call g:DarkTheme()
 
+set statusline=%f:%l:%c
 command! DarkTheme :call g:DarkTheme()
 command! LightTheme :call g:LightTheme()

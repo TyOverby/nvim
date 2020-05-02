@@ -5,6 +5,7 @@ Plug 'morhetz/gruvbox'
 Plug 'flrnprz/plastic.vim'
 Plug 'gcmt/taboo.vim'
 Plug 'rakr/vim-two-firewatch'
+Plug 'sonph/onehalf', {'rtp': 'vim/'}
 Plug 'junegunn/goyo.vim', { 'on': 'Goyo' }
 
 " tpope
@@ -16,7 +17,7 @@ Plug 'tpope/vim-sleuth'
 Plug 'tpope/vim-markdown', { 'for': 'markdown' }
 
 " Utility
-Plug 'junegunn/fzf', { 'dir': '/usr/local/home/$USER/fzf', 'do': './install --bin' }
+Plug 'junegunn/fzf', { 'dir': '$HOME/fzf', 'do': './install --bin' }
 Plug 'junegunn/fzf.vim'
 
 Plug 'blueyed/vim-qf_resize'

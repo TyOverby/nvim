@@ -20,3 +20,20 @@ let g:which_key_map.m.d = "Find (def)"
 
 nnoremap <silent><leader>mi :MerlinILocate<CR>
 let g:which_key_map.m.i = "Find (intf)"
+
+" FZF
+
+let g:which_key_map.f = {}
+let g:which_key_map.f.name = "FZF"
+
+nnoremap <silent><leader>ff :FzfFiles<CR>
+let g:which_key_map.f.f = "Files"
+
+nnoremap <silent><leader>fb :FzfBuffers<CR>
+let g:which_key_map.f.b = "Buffers"
+
+nnoremap <silent><leader>fc :FzfChanged<CR>
+let g:which_key_map.f.c = "Changed"
+
+nnoremap <silent><leader>fr :RG<CR>
+let g:which_key_map.f.r = "Ripgrep"

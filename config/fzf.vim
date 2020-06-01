@@ -1,5 +1,5 @@
 " Reverse the layout to make the FZF list top-down
-let $FZF_DEFAULT_OPTS=' --color=dark --layout=reverse --margin=0,0 --tiebreak=end,begin,length'
+let $FZF_DEFAULT_OPTS=' --color=dark --layout=reverse --margin=0,0 --tiebreak=begin,length,end --preview "bat {} --color always --style plain --line-range :'.&lines.'"'
 
 " Using the custom window creation function
 let g:fzf_layout = { 'window': 'call FloatingFZF()' }
@@ -48,3 +48,12 @@ endfunction
 
 command! FzfChanged : call fzf#run(fzf#wrap({'source': "$HOME/.vim/bin/changed_files.sh", 'sink':'e'}))
 
+function! RipgrepFzf(query, fullscreen)
+  let command_fmt = 'rg --column --line-number --no-heading --color=never --smart-case %s || true'
+  let initial_command = printf(command_fmt, shellescape(a:query))
+  let reload_command = printf(command_fmt, '{q}')
+  let spec = {'options': ['--phony', '--query', a:query, '--bind', 'change:reload:'.reload_command]}
+  call fzf#vim#grep(initial_command, 1, fzf#vim#with_preview(spec), a:fullscreen)
+endfunction
+
+command! -nargs=* -bang RG call RipgrepFzf(<q-args>, <bang>0)

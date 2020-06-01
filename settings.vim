@@ -1,7 +1,9 @@
 set smartcase  " Switches between case-sensitive and insensitive search
 set smarttab   " Tab insert is determined by syntax
 set nohlsearch " Turn off obnoxious highlighting on previous search
-set completeopt-=preview " Dunno
+set completeopt-=preview " Dunno 
+
+set iskeyword=@,48-57,_,192-255 " Default vim iskeyword
 
 set autowriteall " Automatically save files when buffers leave
 

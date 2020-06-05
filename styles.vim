@@ -45,6 +45,7 @@ endfunction
 
 call g:DarkTheme()
 
-set statusline=%f:%l:%c
+set statusline=%f:%l:%c%=\%{noscrollbar#statusline(20,'\|','█',['▐'],['▌'])}
+
 command! DarkTheme :call g:DarkTheme()
 command! LightTheme :call g:LightTheme()

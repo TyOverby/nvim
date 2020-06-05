@@ -5,6 +5,7 @@ Plug 'morhetz/gruvbox'
 Plug 'flrnprz/plastic.vim'
 Plug 'gcmt/taboo.vim'
 Plug 'junegunn/goyo.vim', { 'on': 'Goyo' }
+Plug 'gcavallanti/vim-noscrollbar'
 
 " tpope
 Plug 'tpope/vim-repeat'

@@ -1,5 +1,7 @@
 autocmd filetype netrw call NetrwMapping()
 
+map <unique> <c-r> <Plug>NetrwRefresh
+
 function! OpenTerm() abort
   let currdir = getcwd()
   let netrwdir = b:netrw_curdir

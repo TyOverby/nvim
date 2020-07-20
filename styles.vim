@@ -1,6 +1,8 @@
-set notermguicolors
+set termguicolors
 
 hi! link EnclosingExpr Search
+
+set fillchars+=vert:\ 
 
 function! g:LightTheme() 
     set background=light
@@ -26,20 +28,12 @@ endfunction
 function! g:DarkTheme() 
     set background=dark
     let g:gruvbox_contrast_dark="hard"
-    colorscheme gruvbox
+    let g:sonokai_style = 'atlantis'
+    colorscheme sonokai
 
-    hi! TabLineFill    ctermbg=234  ctermfg=223 cterm=None
-    hi! TabLine        ctermbg=234  ctermfg=223 cterm=None
-    hi! TabLineSel     ctermbg=234  cterm=None
-
-    hi! StatusLineNC   ctermbg=223 ctermfg=234
-    hi! StatusLine     ctermbg=223 ctermfg=234
-    hi! SignColumn     ctermbg=None
-    hi! VertSplit      ctermbg=234 ctermfg=234
-    hi! ALEErrorLine   ctermbg=52
-    hi! ALEWarningLine ctermbg=236
-    hi! link ALEErrorSign GruvboxRed
-    hi! link ALEWarningSign GruvboxOrange
+    hi! SignColumn     ctermbg=None guibg=None
+    hi! link VertSplit TabLineFill
+    hi! link TabLine TabLineFill
     hi! EndOfBuffer ctermbg=bg ctermfg=bg guibg=bg guifg=bg
 endfunction
 

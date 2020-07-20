@@ -1,6 +1,6 @@
 autocmd filetype netrw call NetrwMapping()
 
-map <unique> <c-r> <Plug>NetrwRefresh
+map! <unique> <c-r> <Plug>NetrwRefresh
 
 function! OpenTerm() abort
   let currdir = getcwd()
@@ -14,7 +14,7 @@ function! NetrwMapping()
     nnoremap <buffer>t :call OpenTerm()<CR>
 
     nunmap <C-l>
-    nnoremap <C-l> :tabnext<CR>
+    nnoremap <silent> <C-l> :tabnext<CR>
 
     let g:netrw_list_hide = ''
     let g:netrw_list_hide .= ',^\./$'

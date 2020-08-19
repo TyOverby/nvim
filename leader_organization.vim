@@ -14,6 +14,9 @@ let g:which_key_map.m.name = "Merlin"
 nnoremap <silent><leader>mt :MerlinTypeOf<CR>
 let g:which_key_map.m.t = "Type Of"
 
+nnoremap <silent><leader>my :MerlinYankLatestType<CR>
+let g:which_key_map.m.t = "Yank Type"
+
 vnoremap <silent><leader>mt :MerlinTypeOfSel<CR>
 nnoremap <silent><leader>md :MerlinLocate<CR>
 let g:which_key_map.m.d = "Find (def)"

@@ -8,7 +8,11 @@ call minpac#add('neovim/nvim-lspconfig')
 call minpac#add('nvim-lua/completion-nvim')
 packloadall
 
-if (isdirectory(expand("./_opam")))
+if !executable("ocamllsp") 
+    echom "ocamllsp executable not found, make sure it's on your path!"
+    finish
+end
+
 lua <<EOF
 
 local lspconfig = require'lspconfig'
@@ -21,17 +25,6 @@ end
 lspconfig.ocamllsp.setup{on_attach=on_attach}
 
 EOF
-endif
-
-nnoremap <silent> <c-]> <cmd>lua vim.lsp.buf.definition()<CR>
-nnoremap <silent> K     <cmd>lua vim.lsp.buf.hover()<CR>
-nnoremap <silent> gD    <cmd>lua vim.lsp.buf.implementation()<CR>
-nnoremap <silent> <c-k> <cmd>lua vim.lsp.buf.signature_help()<CR>
-nnoremap <silent> 1gD   <cmd>lua vim.lsp.buf.type_definition()<CR>
-nnoremap <silent> gr    <cmd>lua vim.lsp.buf.references()<CR>
-nnoremap <silent> g0    <cmd>lua vim.lsp.buf.document_symbol()<CR>
-nnoremap <silent> gW    <cmd>lua vim.lsp.buf.workspace_symbol()<CR>
-nnoremap <silent> gd    <cmd>lua vim.lsp.buf.declaration()<CR>
 
 nnoremap <silent><leader>mt <cmd>lua vim.lsp.buf.hover()<CR>
 " <cmd>lua vim.lsp.buf.hover()<CR>

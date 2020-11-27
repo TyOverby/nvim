@@ -1,41 +1,62 @@
-let g:vimrc_path = fnamemodify(resolve(expand('<sfile>:p')), ':h')
+set nocompatible
 
-function! s:sourcelocal(path)
-  execute 'source ' . g:vimrc_path . '/' . a:path . '.vim'
-endfunction
+" Initialize minpac
+packadd minpac
+call minpac#init()
+call minpac#add('k-takata/minpac', {'type': 'opt'})
+call minpac#add('neovim/nvim-lspconfig')
+call minpac#add('nvim-lua/completion-nvim')
+packloadall
 
-" Settings
-call s:sourcelocal('settings')
-call s:sourcelocal('leader_organization')
+if (isdirectory(expand("./_opam")))
+lua <<EOF
 
-" Plugins
-if exists("g:bundles_loaded")
-    " do nothing 
-else
-    call plug#begin(g:vimrc_path . '/plugged')
-        call s:sourcelocal('plugins')
-    call plug#end()
+local lspconfig = require'lspconfig'
+local configs = require'lspconfig/configs'
+
+local on_attach = function()
+  require'completion'.on_attach()
+end
+
+lspconfig.ocamllsp.setup{on_attach=on_attach}
+
+EOF
 endif
 
-" Remaps
-call s:sourcelocal('remaps')
+nnoremap <silent> <c-]> <cmd>lua vim.lsp.buf.definition()<CR>
+nnoremap <silent> K     <cmd>lua vim.lsp.buf.hover()<CR>
+nnoremap <silent> gD    <cmd>lua vim.lsp.buf.implementation()<CR>
+nnoremap <silent> <c-k> <cmd>lua vim.lsp.buf.signature_help()<CR>
+nnoremap <silent> 1gD   <cmd>lua vim.lsp.buf.type_definition()<CR>
+nnoremap <silent> gr    <cmd>lua vim.lsp.buf.references()<CR>
+nnoremap <silent> g0    <cmd>lua vim.lsp.buf.document_symbol()<CR>
+nnoremap <silent> gW    <cmd>lua vim.lsp.buf.workspace_symbol()<CR>
+nnoremap <silent> gd    <cmd>lua vim.lsp.buf.declaration()<CR>
 
-" Styles
-call s:sourcelocal('styles')
+nnoremap <silent><leader>mt <cmd>lua vim.lsp.buf.hover()<CR>
+" <cmd>lua vim.lsp.buf.hover()<CR>
+nnoremap <silent><leader>md <cmd>lua vim.lsp.buf.declaration()<CR>
+nnoremap <silent><leader>mD <cmd>lua vim.lsp.buf.definition()<CR>
+nnoremap <silent><leader>mr <cmd>lua vim.lsp.buf.references()<CR>
+nnoremap <silent><leader>mw <cmd>lua vim.lsp.buf.workspace_symbol("")<CR>
 
-" Configs
-call s:sourcelocal('config/merlin')
-call s:sourcelocal('config/deoplete')
-call s:sourcelocal('config/taboo')
-call s:sourcelocal('config/fzf')
-call s:sourcelocal('config/which_key')
-call s:sourcelocal('config/netrw')
-call s:sourcelocal('config/ale')
-call s:sourcelocal('config/vim-markdown')
+set omnifunc=v:lua.vim.lsp.omnifunc
 
-" Don't put this in settings because someone overrides it in 
-" a plugin :(
-set scrolloff=0
+function! FormatOcaml()
+    let curpos = getpos('.')
+    lua vim.lsp.buf.formatting_sync(nil, 1000)
+    call setpos ( '.', curpos )
+endfunction
 
-" TODO: https://github.com/ncm2/float-preview.nvim
-" TODO: https://github.com/junegunn/fzf.vim/issues/664 
+autocmd BufWritePre *.ml,*.mli call FormatOcaml()
+
+" Use <Tab> and <S-Tab> to navigate through popup menu
+inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
+inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+" " Set completeopt to have a better completion experience
+set completeopt=menuone,noinsert,noselect
+" " Avoid showing message extra message when using completion
+set shortmess+=c
+imap <tab> <Plug>(completion_smart_tab)
+imap <s-tab> <Plug>(completion_smart_s_tab)
+

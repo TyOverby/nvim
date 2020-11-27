@@ -1,6 +1,5 @@
 set nocompatible
 
-" Initialize minpac
 packadd minpac
 call minpac#init()
 call minpac#add('k-takata/minpac', {'type': 'opt'})
@@ -14,7 +13,6 @@ if !executable("ocamllsp")
 end
 
 lua <<EOF
-
 local lspconfig = require'lspconfig'
 local configs = require'lspconfig/configs'
 
@@ -23,11 +21,9 @@ local on_attach = function()
 end
 
 lspconfig.ocamllsp.setup{on_attach=on_attach}
-
 EOF
 
 nnoremap <silent><leader>mt <cmd>lua vim.lsp.buf.hover()<CR>
-" <cmd>lua vim.lsp.buf.hover()<CR>
 nnoremap <silent><leader>md <cmd>lua vim.lsp.buf.declaration()<CR>
 nnoremap <silent><leader>mD <cmd>lua vim.lsp.buf.definition()<CR>
 nnoremap <silent><leader>mr <cmd>lua vim.lsp.buf.references()<CR>
@@ -43,12 +39,9 @@ endfunction
 
 autocmd BufWritePre *.ml,*.mli call FormatOcaml()
 
-" Use <Tab> and <S-Tab> to navigate through popup menu
 inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
 inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
-" " Set completeopt to have a better completion experience
 set completeopt=menuone,noinsert,noselect
-" " Avoid showing message extra message when using completion
 set shortmess+=c
 imap <tab> <Plug>(completion_smart_tab)
 imap <s-tab> <Plug>(completion_smart_s_tab)
